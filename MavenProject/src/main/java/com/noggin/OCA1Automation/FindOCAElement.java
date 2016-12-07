@@ -9,7 +9,7 @@ import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Reporter;
+//import org.testng.Reporter;
 
 public class FindOCAElement {
 	
@@ -320,7 +320,7 @@ private WebElement locateButton(WebElement el,String label) {
 		}
 		else{
             // Using the TestNG API for logging
-            Reporter.log("Element: " + element.getLocation().toString() + ", is not available on a page - ");
+          // Reporter.log("Element: " + element.getLocation().toString() + ", is not available on a page - ");
             System.out.println("Element: " + element.getText() + ", is not available on a page - ");
                            
     		}

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.noggin.OCA1Atumation.AWebDriverOCAFirstModalTest">
+      <class name="com.noggin.OCA1Atumation.AWebDriverOCACreateAssetwithLibraryTest">
         <methods>
+          <include name="setup"/>
           <include name="hellOCA"/>
           <include name="close"/>
-          <include name="setup"/>
         </methods>
-      </class> <!-- com.noggin.OCA1Atumation.AWebDriverOCAFirstModalTest -->
+      </class> <!-- com.noggin.OCA1Atumation.AWebDriverOCACreateAssetwithLibraryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

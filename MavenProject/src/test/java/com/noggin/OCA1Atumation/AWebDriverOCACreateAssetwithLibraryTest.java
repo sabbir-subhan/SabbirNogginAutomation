@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -52,13 +53,13 @@ public class AWebDriverOCACreateAssetwithLibraryTest {
 	  //Find WebElement user name
 	  WebElement wgtUsername=TestOCA.FindWebElementUsingID("wgt-Username");
 	  //Selenium Action on WebElement
-	  wgtUsername.sendKeys("noggin");
+	  wgtUsername.sendKeys("sabbir");
 	  
 	//Find WebElement wgt-Password
 	  WebElement wgtPassword=TestOCA.FindWebElementUsingID("wgt-Password");
 	  //Selenium Action on WebElement
-	  wgtPassword.sendKeys("$ecure1t");
-	  
+	  wgtPassword.sendKeys("1234test");
+	 
 	//Find Signin button
 	  WebElement SignInButton=TestOCA.FindandReturnWebElement("button|@|Sign In");
 	  //Selenium Action on WebElement
@@ -105,7 +106,7 @@ public class AWebDriverOCACreateAssetwithLibraryTest {
 	  Thread.sleep(5000);  // Let the user actually see something!
 	  
   }
-  @AfterTest
+  @AfterClass
   public void close(){
 	  driver.quit();
   }

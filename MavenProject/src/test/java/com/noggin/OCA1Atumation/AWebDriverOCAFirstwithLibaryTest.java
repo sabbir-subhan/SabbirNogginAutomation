@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -173,7 +174,7 @@ public class AWebDriverOCAFirstwithLibaryTest {
 	  //Thread.sleep(5000);  // Let the user actually see something!
 	  
   }
-  @AfterTest
+  @AfterClass
   public void close(){
 	  driver.quit();
   }
