@@ -49,7 +49,9 @@ public class WebDriverOCACreateEventTest {
 
 	  driver = new ChromeDriver();
 	  //Add 10 secs implicit wait for each web elements
-	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	  //Add 60 secs for all page load in OCA
+	  driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 	  //Maximize browser window
 	  driver.manage().window().maximize();
 	  
