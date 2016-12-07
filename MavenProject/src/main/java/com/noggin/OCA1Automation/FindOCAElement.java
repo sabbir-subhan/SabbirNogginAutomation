@@ -1,6 +1,7 @@
 package com.noggin.OCA1Automation;
 
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
@@ -394,6 +395,17 @@ private WebElement locateButton(WebElement el,String label) {
 						}
 					
 			}
+	public String RandomText(){
+		char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+		  StringBuilder sb = new StringBuilder();
+		  Random random = new Random();
+		  for (int i = 0; i < 20; i++) {
+		      char c = chars[random.nextInt(chars.length)];
+		      sb.append(c);
+		      
+		  }
+		  return sb.toString();
+	}
 	
 	/*
 	public void IntractionWithElement(WebDriver driver,WebElement Element) {
