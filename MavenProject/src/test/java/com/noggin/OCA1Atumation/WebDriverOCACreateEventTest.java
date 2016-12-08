@@ -19,6 +19,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.noggin.OCA1Automation.FindOCAElement;
+
 import junit.framework.Assert;
 
 
@@ -423,9 +425,11 @@ public class WebDriverOCACreateEventTest {
 				Assert.assertTrue(Title.contains("Events"));
 				
 				//Now find and click New button
-				WebDriverWait waitforNewEventLinkToBeVisible = new WebDriverWait(driver,10);
-				waitforNewEventLinkToBeVisible.until(ExpectedConditions.presenceOfElementLocated((By.xpath("//*[@id='wgt-summary-31']//*[text()='New']"))));
-				WebElement NewEventLink=driver.findElement(By.xpath("//*[@id='wgt-summary-31']//*[text()='New']"));
+				//WebDriverWait waitforNewEventLinkToBeVisible = new WebDriverWait(driver,10);
+				//waitforNewEventLinkToBeVisible.until(ExpectedConditions.presenceOfElementLocated((By.xpath("//*[@id='wgt-summary-31']//*[text()='New']"))));
+				//WebElement NewEventLink=driver.findElement(By.xpath("//*[@id='wgt-summary-31']//*[text()='New']"));
+				FindOCAElement TestOCA=new FindOCAElement(driver);
+				WebElement NewEventLink=TestOCA.FindandReturnWebElement("screentabsbutton|@|wgt-Tabs=New");
 				NewEventLink.click();
 
 				
