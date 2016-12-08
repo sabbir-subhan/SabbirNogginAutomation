@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32239" started-at="2016-12-07T23:18:55Z" finished-at="2016-12-07T23:19:28Z">
+  <suite name="Default suite" duration-ms="78680" started-at="2016-12-08T04:41:27Z" finished-at="2016-12-08T04:42:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32239" started-at="2016-12-07T23:18:55Z" finished-at="2016-12-07T23:19:28Z">
-      <class name="com.noggin.OCA1Atumation.AWebDriverOCACreateAssetwithLibraryTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.noggin.OCA1Atumation.AWebDriverOCACreateAssetwithLibraryTest@18be83e4]" name="setup" is-config="true" duration-ms="10411" started-at="2016-12-08T10:18:55Z" finished-at="2016-12-08T10:19:06Z">
+    <test name="Default test" duration-ms="78680" started-at="2016-12-08T04:41:27Z" finished-at="2016-12-08T04:42:45Z">
+      <class name="com.noggin.OCA1Atumation.WebDriverOCACreateEventTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.noggin.OCA1Atumation.WebDriverOCACreateEventTest@4c70fda8]" name="setup" is-config="true" duration-ms="5329" started-at="2016-12-08T15:41:27Z" finished-at="2016-12-08T15:41:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="hellOCA()[pri:0, instance:com.noggin.OCA1Atumation.AWebDriverOCACreateAssetwithLibraryTest@18be83e4]" name="hellOCA" duration-ms="20827" started-at="2016-12-08T10:19:06Z" finished-at="2016-12-08T10:19:27Z">
+        <test-method status="PASS" signature="CreateEventTest()[pri:0, instance:com.noggin.OCA1Atumation.WebDriverOCACreateEventTest@4c70fda8]" name="CreateEventTest" duration-ms="72351" started-at="2016-12-08T15:41:32Z" finished-at="2016-12-08T15:42:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- hellOCA -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.noggin.OCA1Atumation.AWebDriverOCACreateAssetwithLibraryTest@18be83e4]" name="close" is-config="true" duration-ms="984" started-at="2016-12-08T10:19:27Z" finished-at="2016-12-08T10:19:28Z">
+        </test-method> <!-- CreateEventTest -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.noggin.OCA1Atumation.WebDriverOCACreateEventTest@4c70fda8]" name="close" is-config="true" duration-ms="980" started-at="2016-12-08T15:42:44Z" finished-at="2016-12-08T15:42:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-      </class> <!-- com.noggin.OCA1Atumation.AWebDriverOCACreateAssetwithLibraryTest -->
+      </class> <!-- com.noggin.OCA1Atumation.WebDriverOCACreateEventTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
