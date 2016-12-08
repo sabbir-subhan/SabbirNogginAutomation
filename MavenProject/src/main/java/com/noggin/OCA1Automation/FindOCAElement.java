@@ -7,10 +7,13 @@ import java.util.regex.Pattern;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 //import org.testng.Reporter;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FindOCAElement {
 	
@@ -94,7 +97,13 @@ public class FindOCAElement {
 						target = this.locateContextMenuItem(target,search);
 						break;
 					}
-					
+					case "tree":
+					case "treeexp":
+					{
+						System.out.println("We are in tree or treeExpand");
+						target=this.locateNodeofAExapandingTree(target,search);
+						break;
+					}
 										
 				}
 				
@@ -104,11 +113,75 @@ public class FindOCAElement {
 			
 			
 		}
-		//
+		
 		return target;
 	
 	}
 	
+private WebElement locateNodeofAExapandingTree(WebElement target, String search) {
+			//Auto-generated method stub
+			String[] parts=search.split(Pattern.quote("&amp;@&amp;"));
+			System.out.println(parts[0]);
+			System.out.println(parts[1]);
+			
+			//First part is the wgt id, the rest is the hierarchy of labels, note this means that duplicate names are not supported, at least
+			//not selecting any but the first
+			/*
+			if(parts.length!=2){
+				return null;
+			}
+			*/
+			
+			String wgtId=parts[0];//first part will id
+			String TreeTopNode=parts[parts.length-1];
+			
+			
+						//Now we deriver xpath expression for div class of(3 level up) TreeNode and check value of calss attribute of this element
+					String XpathExpressionTopTreeElementDiv=("//*[@id='"+wgtId+"']/ul/li//*[text()='"+TreeTopNode+"']/../../..");
+					System.out.println(XpathExpressionTopTreeElementDiv);	
+					WebElement TopTreeElementDiv=target.findElement(By.xpath(XpathExpressionTopTreeElementDiv));
+					System.out.println(TopTreeElementDiv.getAttribute("class"));
+						if(TopTreeElementDiv.getAttribute("class").contains("collapsed")){
+							System.out.println(XpathExpressionTopTreeElementDiv+ "is NO exapanded, ready expand");
+							return TopTreeElementDiv;
+						}
+						else{
+							if(TopTreeElementDiv.getAttribute("class").contains("expanded")){
+								System.out.println(XpathExpressionTopTreeElementDiv+ "is allready exapanded");
+								//collapse top level tree
+								this.collapseTree(TopTreeElementDiv);
+								System.out.println(XpathExpressionTopTreeElementDiv+ "is now collapsed");
+								return TopTreeElementDiv;
+							}
+							else{
+								System.out.println(XpathExpressionTopTreeElementDiv+ "does not have child element. So let selenium click");
+								//Selenium need to click Label
+								String XpathExpressionLabel=("//*[@id='"+wgtId+"']/ul/li//*[text()='"+TreeTopNode+"']");
+								WebElement TopTreeLabel=target.findElement(By.xpath(XpathExpressionLabel));
+								return TopTreeLabel;
+				}
+				
+			}
+		
+	}
+
+
+private void collapseTree(WebElement topTreeElementDiv) {
+			WebElement TopTreeElementDiv1=topTreeElementDiv;
+			TopTreeElementDiv1.click();
+			// Deafult pause when Top Menu after Collapsing in 3 sec
+			long pause=3000;//in Mili sec
+			
+			 try {
+					Thread.sleep(pause);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+}
+
+
 private WebElement locateIframeBodayTag(WebElement target) {
 		//  Auto-generated method stub
 		this.switchToiframe("_ngbasis_modalwin_");//iframe name is static accross OCA as per Brett
@@ -405,6 +478,31 @@ private WebElement locateButton(WebElement el,String label) {
 		      
 		  }
 		  return sb.toString();
+	}
+	
+	public void waitForOCAElement(String XpathExpression,int waitInSecs){
+			WebDriverWait waitforElementTobePresent = new WebDriverWait(driver,waitInSecs);
+			try{
+			waitforElementTobePresent.until(ExpectedConditions.presenceOfAllElementsLocatedBy((By.xpath(XpathExpression))));
+				if (driver.findElements(By.xpath(XpathExpression)).size()>1){
+					System.out.println("Total "+driver.findElements(By.xpath(XpathExpression)).size()+" Number of Element with Xpath :"+XpathExpression+" present in page :"+driver.getCurrentUrl()+" with Title: "+driver.getTitle());
+				}
+				else{
+					System.out.println("Total "+driver.findElements(By.xpath(XpathExpression)).size()+" Number of Element with Xpath :"+XpathExpression+" present in page :"+driver.getCurrentUrl()+" with Title: "+driver.getTitle());
+				}
+				
+			}
+			catch (NoSuchElementException e)
+			{
+				System.out.println("WebElement is not found in page: "+driver.getCurrentUrl()+" with Title: "+driver.getTitle()+ " with xpath expression :"+XpathExpression+" after waifing for :"+waitInSecs+" secs");
+				e.printStackTrace();
+			}
+			catch (TimeoutException e)
+			{
+				System.out.println("WebElement is not found in page: "+driver.getCurrentUrl()+" with Title: "+driver.getTitle()+ " with xpath expression :"+XpathExpression+" after waifing for :"+waitInSecs+" secs");
+				e.printStackTrace();
+			}
+		  
 	}
 	
 	/*
