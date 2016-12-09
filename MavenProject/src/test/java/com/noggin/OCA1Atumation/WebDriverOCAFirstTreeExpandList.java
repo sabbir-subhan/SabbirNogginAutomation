@@ -71,13 +71,16 @@ public class WebDriverOCAFirstTreeExpandList {
 	  
 	  //We will go Settings->OCA designer->Lists
 	  //Start
-	  WebElement LevelOneToPmenu=TestOCA.FindandReturnWebElement("topmenu|@|Contacts");
+	  WebElement LevelOneToPmenu=TestOCA.FindandReturnWebElement("topmenu|@|Settings");
 	  TestOCA.MouseOverMenu(LevelOneToPmenu);;
 	  
 	  //Find and Mouse over submenu-OCA designer
-	  WebElement LevelTwoSubMenu=TestOCA.FindandReturnWebElement("submenu|@|0:Directory");
-	  LevelTwoSubMenu.click();
-	  //TestOCA.MouseOverMenu(OCADesignerSubMenu);
+	  WebElement LevelTwoSubMenu=TestOCA.FindandReturnWebElement("submenu|@|0:OCA designer");	   
+	  TestOCA.MouseOverMenu(LevelTwoSubMenu);
+	  
+	  //Level 2 Submenu click
+	  WebElement Level3Submenu=TestOCA.FindandReturnWebElement("submenu|@|1:Lists");
+	  Level3Submenu.click();
 	  
 	//Find and Mouse over submenu-Lists
 	// WebElement ListsSubMenu=TestOCA.FindandReturnWebElement("submenu|@|1:Lists");
@@ -85,26 +88,17 @@ public class WebDriverOCAFirstTreeExpandList {
 	  
 	  //Wait for 10 secs to Asset Index to expand
 	  
-	  TestOCA.waitForOCAElement("//div[@id='wgt-ContactsTree']/ul/li",10);
+	  TestOCA.waitForOCAElement("//div[@id='wgt-Lists']/ul/li",10);
 	  
 	  //Find and Click on Top node of tree
-	  WebElement TopNodeofTree=TestOCA.FindandReturnWebElement("treeexp|@|wgt-ContactsTree&amp;@&amp;AMRC - ICS Contacts Testing");
+	  WebElement TopNodeofTree=TestOCA.FindandReturnWebElement("treeexp|@|wgt-Lists&amp;@&amp;Relationships");
 	  TopNodeofTree.click();
 	  
 	  //Find and Click on Second node of tree
-	  WebElement Child1NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-ContactsTree&amp;@&amp;AMRC - ICS Contacts Testing&amp;@&amp;Branches");
+	  WebElement Child1NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-Lists&amp;@&amp;Relationships&amp;@&amp;Between appointments and between appointments and tasks");
 	  Child1NodeofTree.click();
 	  
-	  //Find and Click on Third node of tree
-	  WebElement Child2NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-ContactsTree&amp;@&amp;AMRC - ICS Contacts Testing&amp;@&amp;Branches&amp;@&amp;Fire/Hazardous Materials");
-	  Child2NodeofTree.click();
-	  
-	  
-	  //Find and Click on Third node of tree
-	  WebElement Child3NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-ContactsTree&amp;@&amp;AMRC - ICS Contacts Testing&amp;@&amp;Branches&amp;@&amp;Fire/Hazardous Materials&amp;@&amp;Hazmat");
-	  Child3NodeofTree.click();
-	 
-	  //
+	  //Test
 	  //End
 	  
 	Thread.sleep(10000);  // Let the user actually see something!
