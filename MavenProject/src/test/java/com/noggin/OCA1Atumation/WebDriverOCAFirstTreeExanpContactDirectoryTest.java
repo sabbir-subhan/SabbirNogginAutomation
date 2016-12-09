@@ -16,7 +16,7 @@ import com.noggin.OCA1Automation.FindOCAElement;
 import junit.framework.Assert;
 
 
-public class WebDriverOCAFirstTreeExanpContactDirectory {
+public class WebDriverOCAFirstTreeExanpContactDirectoryTest {
  WebDriver driver;
  
  @BeforeClass
