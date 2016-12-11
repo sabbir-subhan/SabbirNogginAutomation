@@ -1,4 +1,4 @@
-package com.noggin.OCA1Atumation;
+package com.noggin.ExapandTree;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -16,7 +16,7 @@ import com.noggin.OCA1Automation.FindOCAElement;
 import junit.framework.Assert;
 
 
-public class WebDriverOCAFirstTreeExpandList {
+public class WebDriverOCAFirstTreeExpandListTest {
  WebDriver driver;
  
  @BeforeClass
@@ -71,32 +71,33 @@ public class WebDriverOCAFirstTreeExpandList {
 	  
 	  //We will go Settings->OCA designer->Lists
 	  //Start
-	  WebElement LevelOneToPmenu=TestOCA.FindandReturnWebElement("topmenu|@|Settings");
-	  TestOCA.MouseOverMenu(LevelOneToPmenu);;
+	  WebElement LevelOneToPmenu=TestOCA.FindandReturnWebElement("topmenu|@|Documents");
+	  TestOCA.MouseOverMenu(LevelOneToPmenu);
+	  LevelOneToPmenu.click();  
 	  
-	  //Find and Mouse over submenu-OCA designer
-	  WebElement LevelTwoSubMenu=TestOCA.FindandReturnWebElement("submenu|@|0:OCA designer");	   
-	  TestOCA.MouseOverMenu(LevelTwoSubMenu);
-	  
-	  //Level 2 Submenu click
-	  WebElement Level3Submenu=TestOCA.FindandReturnWebElement("submenu|@|1:Lists");
-	  Level3Submenu.click();
-	  
-	//Find and Mouse over submenu-Lists
-	// WebElement ListsSubMenu=TestOCA.FindandReturnWebElement("submenu|@|1:Lists");
-	// ListsSubMenu.click();
 	  
 	  //Wait for 10 secs to Asset Index to expand
 	  
-	  TestOCA.waitForOCAElement("//div[@id='wgt-Lists']/ul/li",10);
+	  TestOCA.waitForOCAElement("//div[@id='wgt-DocumentFolders']/ul/li",10);
 	  
 	  //Find and Click on Top node of tree
-	  WebElement TopNodeofTree=TestOCA.FindandReturnWebElement("treeexp|@|wgt-Lists&amp;@&amp;Relationships");
+	  WebElement TopNodeofTree=TestOCA.FindandReturnWebElement("treeexp|@|wgt-DocumentFolders&amp;@&amp;Asset documents");
 	  TopNodeofTree.click();
 	  
 	  //Find and Click on Second node of tree
-	  WebElement Child1NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-Lists&amp;@&amp;Relationships&amp;@&amp;Between appointments and between appointments and tasks");
+	  WebElement Child1NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-DocumentFolders&amp;@&amp;Asset documents&amp;@&amp;NOGGIN Parent Asset");
 	  Child1NodeofTree.click();
+	  
+	  
+	  
+	  //Find and Click on Second node of tree
+	  WebElement Child2NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-DocumentFolders&amp;@&amp;Asset documents&amp;@&amp;NOGGIN Parent Asset&amp;@&amp;AR Parent Asset");
+	  Child2NodeofTree.click();
+	  
+	  //Find and Click on Third node of tree
+	  WebElement Child3NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-DocumentFolders&amp;@&amp;Asset documents&amp;@&amp;NOGGIN Parent Asset&amp;@&amp;AR Parent Asset&amp;@&amp;Easter Beaches Local Area Command");
+	  Child3NodeofTree.click();
+	  
 	  
 	  //Test
 	  //End
