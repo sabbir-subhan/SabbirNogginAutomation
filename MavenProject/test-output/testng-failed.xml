@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.noggin.OCA1Atumation.WebDriverOCACreateEventTest">
+      <class name="com.noggin.OCA1Atumation.AWebDriverOCAFirstFireFoxNotWorking">
         <methods>
-          <include name="setup"/>
-          <include name="CreateEventTest"/>
-          <include name="close"/>
+          <include name="hellOCA"/>
         </methods>
-      </class> <!-- com.noggin.OCA1Atumation.WebDriverOCACreateEventTest -->
+      </class> <!-- com.noggin.OCA1Atumation.AWebDriverOCAFirstFireFoxNotWorking -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

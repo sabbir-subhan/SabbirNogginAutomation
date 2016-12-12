@@ -2,24 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="78680" started-at="2016-12-08T04:41:27Z" finished-at="2016-12-08T04:42:45Z">
+  <suite name="Default suite" duration-ms="27674" started-at="2016-12-12T04:06:56Z" finished-at="2016-12-12T04:07:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="78680" started-at="2016-12-08T04:41:27Z" finished-at="2016-12-08T04:42:45Z">
-      <class name="com.noggin.OCA1Atumation.WebDriverOCACreateEventTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.noggin.OCA1Atumation.WebDriverOCACreateEventTest@4c70fda8]" name="setup" is-config="true" duration-ms="5329" started-at="2016-12-08T15:41:27Z" finished-at="2016-12-08T15:41:32Z">
+    <test name="Default test" duration-ms="27674" started-at="2016-12-12T04:06:56Z" finished-at="2016-12-12T04:07:23Z">
+      <class name="com.noggin.OCA1Atumation.AWebDriverOCAFirstFireFoxNotWorking">
+        <test-method status="PASS" signature="hellOCA()[pri:0, instance:com.noggin.OCA1Atumation.AWebDriverOCAFirstFireFoxNotWorking@5c7fa833]" name="hellOCA" duration-ms="27656" started-at="2016-12-12T15:06:56Z" finished-at="2016-12-12T15:07:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="CreateEventTest()[pri:0, instance:com.noggin.OCA1Atumation.WebDriverOCACreateEventTest@4c70fda8]" name="CreateEventTest" duration-ms="72351" started-at="2016-12-08T15:41:32Z" finished-at="2016-12-08T15:42:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateEventTest -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.noggin.OCA1Atumation.WebDriverOCACreateEventTest@4c70fda8]" name="close" is-config="true" duration-ms="980" started-at="2016-12-08T15:42:44Z" finished-at="2016-12-08T15:42:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- com.noggin.OCA1Atumation.WebDriverOCACreateEventTest -->
+        </test-method> <!-- hellOCA -->
+      </class> <!-- com.noggin.OCA1Atumation.AWebDriverOCAFirstFireFoxNotWorking -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

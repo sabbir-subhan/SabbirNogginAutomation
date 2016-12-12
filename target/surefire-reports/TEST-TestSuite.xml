@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="5" failures="1" name="TestSuite" time="174.376" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin"/>
+    <property name="java.vm.version" value="25.111-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\ssubhan\workspace\selenium\MavenProject"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="AU"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\ssubhan\workspace\selenium\MavenProject"/>
+    <property name="java.runtime.version" value="1.8.0_111-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\ssubhan\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\Users\ssubhan\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4730973769573909686.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Java/jdk1.8.0_111/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_111/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_111/bin/../jre/lib/amd64;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Google\Google Apps Sync\;C:\Program Files (x86)\Google\Google Apps Migration\;C:\Users\ssubhan\AppData\Local\Box\Box Edit\;C:\Program Files\Java\jdk1.8.0_111\bin\;C:\Program Files\Apache\maven\bin;C:\Users\ssubhan\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Eclipse;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\ssubhan"/>
+    <property name="user.timezone" value="Australia/Sydney"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="ssubhan"/>
+    <property name="java.class.path" value="/C:/Users/ssubhan/eclipse/java-neon/eclipse/../../../.p2/pool/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_111\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -s C:\Users\ssubhan\.m2\settings.xml test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_111"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext;C:\windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\ssubhan\workspace\selenium\MavenProject\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="com.noggin.OCA1Atumation.AWebDriverOCACreateAssetwithLibraryTest" name="hellOCA" time="29.877"/>
+  <testcase classname="com.noggin.OCA1Atumation.AWebDriverOCAFirstModalTest" name="hellOCA" time="16.757"/>
+  <testcase classname="com.noggin.OCA1Atumation.AWebDriverOCAFirstTest" name="hellOCA" time="12.672"/>
+  <testcase classname="com.noggin.OCA1Atumation.AWebDriverOCAFirstwithLibaryTest" name="hellOCA" time="34.776"/>
+  <testcase classname="com.noggin.OCA1Atumation.WebDriverOCACreateEventTest" name="CreateEventTest" time="80.294">
+    <failure message="Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id=&apos;wgt-summary-31&apos;]//*[text()=&apos;New&apos;] (tried for 10 second(s) with 500 MILLISECONDS interval)
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;AVALANCHE&apos;, ip: &apos;10.200.25.138&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\ssubhan\AppData\Local\Temp\scoped_dir14016_9290}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.87, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1e79bd29d15e10b179bf87a6043a51b6" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id=&apos;wgt-summary-31&apos;]//*[text()=&apos;New&apos;] (tried for 10 second(s) with 500 MILLISECONDS interval)
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;AVALANCHE&apos;, ip: &apos;10.200.25.138&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\ssubhan\AppData\Local\Temp\scoped_dir14016_9290}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.87, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1e79bd29d15e10b179bf87a6043a51b6
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:265)
+	at com.noggin.OCA1Atumation.WebDriverOCACreateEventTest.CreateEventTest(WebDriverOCACreateEventTest.java:427)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;wgt-summary-31&apos;]//*[text()=&apos;New&apos;]&quot;}
+  (Session info: chrome=54.0.2840.87)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 20.04 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;AVALANCHE&apos;, ip: &apos;10.200.25.138&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\ssubhan\AppData\Local\Temp\scoped_dir14016_9290}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.87, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1e79bd29d15e10b179bf87a6043a51b6
+*** Element info: {Using=xpath, value=//*[@id=&apos;wgt-summary-31&apos;]//*[text()=&apos;New&apos;]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:181)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:178)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
+	... 35 more
+</failure>
+    <system-out>TEST CASE RUNNING :com.noggin.OCA1Atumation.WebDriverOCACreateEventTest
+Print Title of OCA Home Page: Home (20) - Noggin OCA
+Print Title of Event type designer page: Event type designer (20) - Noggin OCA
+Print Title of New event type(pop-up): New event type - Noggin OCA
+Event Type Name: Automation porzxyqsbafsdjqeysih
+Back to :Event type designer (20) - Noggin OCA
+Print Title of User account types: User account types (20) - Noggin OCA
+Print Title of System user account type propertiese(pop-up): System user account type properties - Noggin OCA
+Back to :Print Title of User account types: User account types (20) - Noggin OCA
+Print Title of Events Index Page: Events (20) - Noggin OCA
+</system-out>
+    <system-err>Starting ChromeDriver 2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed) on port 38807
+Only local connections are allowed.
+Dec 08, 2016 3:29:49 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Attempting bi-dialect session, assuming Postel&apos;s Law holds true on the remote end
+Dec 08, 2016 3:29:50 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+[33.989][SEVERE]: Unable to receive message from renderer
+</system-err>
+  </testcase>
+</testsuite>
