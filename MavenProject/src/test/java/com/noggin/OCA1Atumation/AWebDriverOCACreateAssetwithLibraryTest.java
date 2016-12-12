@@ -22,8 +22,7 @@ public class AWebDriverOCACreateAssetwithLibraryTest {
  @BeforeClass
  
  public void setup() throws InterruptedException{
-	  //test gitt
-	 //Prints Out the Test Case Name in the console for debugging purpose
+	  	 //Prints Out the Test Case Name in the console for debugging purpose
 	  String TestCaseName = this.getClass().getName();
 	  System.out.println("TEST CASE RUNNING :"+ TestCaseName);
 	 // Optional, if not specified, WebDriver will search your path for chromedriver.
