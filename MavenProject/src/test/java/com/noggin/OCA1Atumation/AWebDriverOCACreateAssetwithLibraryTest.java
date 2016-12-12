@@ -41,7 +41,7 @@ public class AWebDriverOCACreateAssetwithLibraryTest {
 
   @Test
   public void hellOCA() throws Exception {
-	  //test
+	  
 	  FindOCAElement TestOCA=new FindOCAElement(driver);
 	  //a.FindWebElementAndAction(driver, "wgt-7", "Click");
 	  WebElement DirectLoginButton=TestOCA.FindandReturnWebElement("button|@|Direct login");
