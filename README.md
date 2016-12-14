@@ -4,8 +4,12 @@ This README would normally document whatever steps are necessary to get your app
 
 ### What is this repository for? ###
 
-* Quick summary
-Selenium Web
+* Quick summary:
+
+Welcome to wonderful world of Selenium Webdriver to Automation. IN this repo, we will store Selenium automation files. In theory, any one with Java IDE (like Eclipse), Maven, GIT, JDK 1.8 should able to build and run these files locally. Ultimately, we like to run automantion files in a continuous intregation tools like Jenkins.
+
+More to come in this space. Please, stay tuned....
+   
 * Version
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
