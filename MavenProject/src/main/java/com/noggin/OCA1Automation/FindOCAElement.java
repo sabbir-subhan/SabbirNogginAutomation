@@ -79,7 +79,7 @@ public class FindOCAElement {
 					case "submenu":
 					{
 				
-						//Find all elements when submenu is visible
+						//Find all elements when submenu is visible //
 						target=this.locateSubMenu(target,search);
 						
 						break;
