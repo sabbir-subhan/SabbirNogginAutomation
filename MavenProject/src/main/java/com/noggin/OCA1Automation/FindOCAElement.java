@@ -235,7 +235,7 @@ private void collapseTree(WebElement topTreeElementDiv) {
 
 private WebElement locateIframeBodayTag(WebElement target) {
 		//  Auto-generated method stub
-		this.switchToiframe("_ngbasis_modalwin_");//iframe name is static accross OCA as per Brett
+		this.switchToiframe("_ngbasis_modalwin_");//iframe name is static across OCA as per Brett
 		WebElement IframeBodyElemet = driver.findElement(By.tagName("body"));
 		System.out.println(IframeBodyElemet.getAttribute("onunload"));
 		target=IframeBodyElemet;
@@ -326,15 +326,6 @@ private WebElement locateSubMenu(WebElement target,String search) {
 		
 		return null;
 	}
-
-
-private List<WebElement> subMenuChildren(WebElement webElement) {
-	// TODO Auto-generated method stub
-	WebElement Children=null;
-	//using xpath go to parent node
-	List <WebElement> CN=webElement.findElements(By.xpath(".."));
-	return null;
-}
 
 
 private WebElement locateButton(WebElement el,String label) {
