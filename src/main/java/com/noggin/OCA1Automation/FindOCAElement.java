@@ -21,6 +21,7 @@ public class FindOCAElement {
 	
 	public FindOCAElement(WebDriver driver){
 		this.driver=driver;
+		//test
 	}
 
 	
@@ -78,7 +79,7 @@ public class FindOCAElement {
 					case "submenu":
 					{
 				
-						//Find all elements when submenu is visible
+						//Find all elements when submenu is visible //
 						target=this.locateSubMenu(target,search);
 						
 						break;
@@ -104,6 +105,12 @@ public class FindOCAElement {
 						target=this.locateNodeofAExapandingTree(target,search);
 						break;
 					}
+					
+					case "treeexpEvent":
+					{
+						System.out.println("We are in Event Tree Expan");
+						target=this.locateNodeofExpandingEventTree(target,search);
+					}
 										
 				}
 				
@@ -118,6 +125,50 @@ public class FindOCAElement {
 	
 	}
 	
+private WebElement locateNodeofExpandingEventTree(WebElement target, String search) {
+	
+		String[] parts=search.split(Pattern.quote("&amp;@&amp;"));
+		System.out.println(parts[0]);
+		System.out.println(parts[1]);
+		
+		String wgtId=parts[0];//first part will id
+		String TreeTopNode=parts[parts.length-1];
+		
+		//Find out the plus sign of next Root Event
+		String xpathExpressionPlusSignforRootLevelEventTRElement=("//*[@id='"+wgtId+"']//*[text()='"+TreeTopNode+"']/..");
+		
+		System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement);	
+		WebElement TopTreeElementTR=target.findElement(By.xpath(xpathExpressionPlusSignforRootLevelEventTRElement));
+		
+		System.out.println(TopTreeElementTR.getAttribute("class"));
+		if(TopTreeElementTR.getAttribute("class").contains("collapsed")){
+			System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement+ "is NO exapanded, ready expand");
+			WebElement TopTreeElementTRPlusSign=target.findElement(By.xpath(xpathExpressionPlusSignforRootLevelEventTRElement+"/td[1]/div/span"));
+			return TopTreeElementTRPlusSign;
+		}
+		else{
+			if(TopTreeElementTR.getAttribute("class").contains("expanded")){
+			System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement+ "is allready exapanded");
+			WebElement TopTreeElementTRPlusSign=target.findElement(By.xpath(xpathExpressionPlusSignforRootLevelEventTRElement+"/td[1]/div/span"));
+			//collapse top level tree
+			this.collapseTree(TopTreeElementTRPlusSign);
+			System.out.println(TopTreeElementTRPlusSign+ "is now collapsed");
+			return TopTreeElementTRPlusSign;
+			}
+			else{
+				
+				System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement+ "does not have child element. So let selenium click");
+				//Selenium need to click Label
+				String XpathExpressionLabel=("//*[@id='"+wgtId+"']//*[text()='"+TreeTopNode+"']");
+				WebElement TopTreeLabel=target.findElement(By.xpath(XpathExpressionLabel));
+				return TopTreeLabel;
+			}
+		}
+		
+	
+	}
+
+
 private WebElement locateNodeofAExapandingTree(WebElement target, String search) {
 			//Auto-generated method stub
 			String[] parts=search.split(Pattern.quote("&amp;@&amp;"));
@@ -184,7 +235,7 @@ private void collapseTree(WebElement topTreeElementDiv) {
 
 private WebElement locateIframeBodayTag(WebElement target) {
 		//  Auto-generated method stub
-		this.switchToiframe("_ngbasis_modalwin_");//iframe name is static accross OCA as per Brett
+		this.switchToiframe("_ngbasis_modalwin_");//iframe name is static across OCA as per Brett
 		WebElement IframeBodyElemet = driver.findElement(By.tagName("body"));
 		System.out.println(IframeBodyElemet.getAttribute("onunload"));
 		target=IframeBodyElemet;
@@ -275,15 +326,6 @@ private WebElement locateSubMenu(WebElement target,String search) {
 		
 		return null;
 	}
-
-
-private List<WebElement> subMenuChildren(WebElement webElement) {
-	// TODO Auto-generated method stub
-	WebElement Children=null;
-	//using xpath go to parent node
-	List <WebElement> CN=webElement.findElements(By.xpath(".."));
-	return null;
-}
 
 
 private WebElement locateButton(WebElement el,String label) {
