@@ -40,7 +40,7 @@ public class AWebDriverOCAFirstModalTest {
  }
 
   @Test
-  public void hellOCA() throws Exception {
+  public void OCATestUsingModal() throws Exception {
 	  
 	  FindOCAElement TestOCA=new FindOCAElement(driver);
 	  //a.FindWebElementAndAction(driver, "wgt-7", "Click");

@@ -44,7 +44,7 @@ public class WebDriverOCAFirstTreeExanndDocumentTest {
  }
 
   @Test
-  public void hellOCA() throws Exception {
+  public void OCAFirstTreeExpandDocumentTest() throws Exception {
 	  
 	  FindOCAElement TestOCA=new FindOCAElement(driver);
 	  //a.FindWebElementAndAction(driver, "wgt-7", "Click");

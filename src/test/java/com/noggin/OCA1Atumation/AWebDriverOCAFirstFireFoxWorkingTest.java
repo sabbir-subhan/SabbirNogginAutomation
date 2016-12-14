@@ -19,7 +19,7 @@ public class AWebDriverOCAFirstFireFoxWorkingTest {
  //WebDriver driver;
 
   @Test
-  public void hellOCA() throws Exception {
+  public void OCATestUsingFireFox() throws Exception {
 	  
 	 //Prints Out the Test Case Name in the console for debugging purpose
 	  String TestCaseName = this.getClass().getName();

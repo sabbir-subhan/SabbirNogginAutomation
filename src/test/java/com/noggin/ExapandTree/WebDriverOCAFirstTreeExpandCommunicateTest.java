@@ -40,11 +40,11 @@ public class WebDriverOCAFirstTreeExpandCommunicateTest {
 	  
 	  driver.get("https://im1.oca-test-beta-el7sec.lan.noggin.com.au/directlogin.html");
 	  Thread.sleep(2000);
-	  //git?? try
+	 
  }
 
   @Test
-  public void hellOCA() throws Exception {
+  public void OCATreeExpandCommunicateTest() throws Exception {
 	  
 	  FindOCAElement TestOCA=new FindOCAElement(driver);
 	  //a.FindWebElementAndAction(driver, "wgt-7", "Click");
