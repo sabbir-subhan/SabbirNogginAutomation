@@ -9,18 +9,21 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.noggin.OCA1Automation.FindOCAElement;
+
 import junit.framework.Assert;
 
 
 public class AWebDriverOCAFirstTest {
  WebDriver driver;
+ String TestCaseName = this.getClass().getName();
  
  @BeforeClass
  
  public void setup() throws InterruptedException{
 	  
 	 //Prints Out the Test Case Name in the console for debugging purpose
-	  String TestCaseName = this.getClass().getName();
+	  
 	  System.out.println("TEST CASE RUNNING :"+ TestCaseName);
 	 // Optional, if not specified, WebDriver will search your path for chromedriver.
 	  System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
@@ -39,6 +42,8 @@ public class AWebDriverOCAFirstTest {
   public void hellOCA() throws Exception {
 	  
 
+	  FindOCAElement TestOCA=new FindOCAElement(driver);
+	  TestOCA.captureScreenShot(driver,TestCaseName);//should take screenshot and put in a PNG file with file name same as Javafilename
 	  WebElement DirectLoginButton = driver.findElement(By.id("wgt-7"));
 	  DirectLoginButton.click();
 	  Thread.sleep(5000);
@@ -57,7 +62,8 @@ public class AWebDriverOCAFirstTest {
 	  System.out.println(Title);
 	  
 	  //Now we will check if Title has "Home" and "Noggin OCA" in it
-	  Assert.assertEquals("Home (20) - Noggin OCA",Title);
+	  Assert.assertTrue(Title.contains("Home"));
+	  TestOCA.captureScreenShot(driver,TestCaseName);
 	
 	  Thread.sleep(5000);  // Let the user actually see something!
 	  
