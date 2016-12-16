@@ -1,12 +1,20 @@
 package com.noggin.OCA1Automation;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.regex.Pattern;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -554,4 +562,29 @@ private WebElement locateButton(WebElement el,String label) {
 		//System.out.println(IDEIntraction); 
 	
 	}*/
+	
+	 public void captureScreenShot(WebDriver driver,String FileName){
+		 
+		 //get current date
+		 DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy_HHmmss.SSS");
+		 Date currentDate=new Date();
+		 String DateTimeStr=dateFormat.format(currentDate);
+
+		  // Take screenshot and store as a file format
+		  File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		  	try {
+		  // now copy the  screenshot to desired location using copyFile method
+
+		  		FileUtils.copyFile(src, new File("C:/selenium/"+FileName+"DateTime"+DateTimeStr+".png"));
+		       }
+
+		  	catch (IOException e)
+
+		  	{
+
+		  		System.out.println(e.getMessage());
+
+		    }
+
+		}
 }
