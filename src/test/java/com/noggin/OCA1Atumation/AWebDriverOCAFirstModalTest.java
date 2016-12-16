@@ -18,13 +18,14 @@ import junit.framework.Assert;
 
 public class AWebDriverOCAFirstModalTest {
  WebDriver driver;
+ String TestCaseName = this.getClass().getName();
  
  @BeforeClass
  
  public void setup() throws InterruptedException{
 	  
 	 //Prints Out the Test Case Name in the console for debugging purpose
-	  String TestCaseName = this.getClass().getName();
+	  
 	  System.out.println("TEST CASE RUNNING :"+ TestCaseName);
 	 // Optional, if not specified, WebDriver will search your path for chromedriver.
 	  System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
@@ -71,18 +72,23 @@ public class AWebDriverOCAFirstModalTest {
 	  System.out.println(Title);
 	  
 	  //Now we will check if Title has "Home" and "Noggin OCA" in it
-	  Assert.assertTrue(Title.contains("Home"));;
+	  Assert.assertTrue(Title.contains("Home"));
+	  //Take Screenshot of Home page
+	  //TestOCA.captureScreenShot(driver, TestCaseName);
 	  
 	  //We want to switch to modal and Click Continue button
 	  
 	  WebElement ContinueButtonInModal=TestOCA.FindandReturnWebElement("modal|@|m!@!button|@|Continue >");
+	  //Take Screenshot of Home page with modal
+	  TestOCA.captureScreenShot(driver, TestCaseName);
+	  
 	  ContinueButtonInModal.click();
 	  Thread.sleep(5000);
-	  
+
 	  //switch to iframe
 	  //a.switchToiframe("_ngbasis_modalwin_");
 	
-	  Thread.sleep(5000);  // Let the user actually see something!
+	 // Thread.sleep(5000);  // Let the user actually see something!
 	  
   }
   @AfterClass
