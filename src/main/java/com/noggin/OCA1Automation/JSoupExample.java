@@ -52,7 +52,7 @@ public class JSoupExample {
 							}
 					if(j==3){
 						part3=Text;
-						/*After combing text from tree subsquent td elements, we should pass this element to a Java Function
+						/*After combing text from tree subsequent td elements, we should pass this element to a Java Function
 						 * Java function will read the string.
 						 * Based on subs string (exact text) rule, it will write selenium webdriver function call
 						 * and save in java or text file.
