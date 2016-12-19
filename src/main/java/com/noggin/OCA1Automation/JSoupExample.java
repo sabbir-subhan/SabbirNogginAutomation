@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -44,14 +45,16 @@ public class JSoupExample {
 			if(x>4){
 					if(j==1){
 						part1=Text;
+						part1=removeOCABbtton(part1);
 						
 							}
 					if(j==2){
 						part2=Text;
-						
+						part2=removeOCABbtton(part2);
 							}
 					if(j==3){
 						part3=Text;
+						part3=removeOCABbtton(part3);
 						/*After combing text from tree subsequent td elements, we should pass this element to a Java Function
 						 * Java function will read the string.
 						 * Based on subs string (exact text) rule, it will write selenium webdriver function call
@@ -81,6 +84,15 @@ public class JSoupExample {
 		savetoFile(OutPutArray);
 		}
 
+	private static String removeOCABbtton(String part1) {
+		String[] parts=part1.split(Pattern.quote("oca="));
+		String ComStr="";
+		for (int i=0;i<parts.length;i++){
+			ComStr=ComStr+parts[i];
+		}
+		return ComStr;
+	}
+
 	public static void savetoFile(ArrayList<String> OutPutArray) throws FileNotFoundException {
 		try{
 		File JavaFile = new File("C://SeleniumIDETestCase//Test.java");
@@ -93,7 +105,7 @@ public class JSoupExample {
 		}
 		catch (IOException e) {
         	System.err.println("Problem writing to the file");
-        	//.e. null;
+        	
     }
 		
 	}
