@@ -20,15 +20,28 @@ import org.jsoup.select.Elements;
  * Apply Business rules to convert each selenium command Noggin specific Java function call
  */
 
-public class JSoupExample {
+public class JSoupToolToReadSelHtlmlFile {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args)  {
 		
 		//Jsoup to read html files and find elements of that HTML file (i.e Selenium Test Cases)
 		//Reference: https://jsoup.org/cookbook/extracting-data/dom-navigation
-		File input = new File("C://SeleniumIDETestCase//login.html");
-		Document doc = Jsoup.parse(input, "UTF-8");
-		Elements contents = doc.getElementsByTag("td");
+		Elements contents=null;
+		try{
+				File input = new File("C://SeleniumIDETestCase//login.html");
+				Document doc = Jsoup.parse(input, "UTF-8");
+				contents = doc.getElementsByTag("td");
+				
+		}
+		catch(NullPointerException e){
+			System.out.println("No file found!!");
+		} 
+		catch (IOException e) {
+		
+			System.err.println("Problem writing to the file");
+			e.printStackTrace();
+		}
+		//initiliaze variables
 		int x=1;
 		String part1="";
 		String part2="";
@@ -81,7 +94,13 @@ public class JSoupExample {
 			x=x+1;
 			}
 		//Write array list file
-		savetoFile(OutPutArray);
+		try {
+			savetoFile(OutPutArray);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Problem writing to the file");
+			e.printStackTrace();
+		}
 		}
 
 	private static String removeOCABbtton(String part1) {
@@ -93,7 +112,7 @@ public class JSoupExample {
 		return ComStr;
 	}
 
-	public static void savetoFile(ArrayList<String> OutPutArray) throws FileNotFoundException {
+	private static void savetoFile(ArrayList<String> OutPutArray) throws FileNotFoundException {
 		try{
 		File JavaFile = new File("C://SeleniumIDETestCase//Test.java");
 		FileOutputStream FlieOutPut=new FileOutputStream(JavaFile);
