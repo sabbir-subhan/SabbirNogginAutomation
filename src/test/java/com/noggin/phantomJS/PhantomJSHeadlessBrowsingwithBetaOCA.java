@@ -26,7 +26,7 @@ public class PhantomJSHeadlessBrowsingwithBetaOCA {
 		  
 		  System.out.println("TEST CASE RUNNING :"+ TestCaseName);
 		  //Location of phanJS.exe file
-	        File file = new File("C:\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");				
+	        File file = new File("phantomjs.exe");	//taking phantomJS.exe from project resource			
 	        System.setProperty("phantomjs.binary.path", file.getAbsolutePath());
 	        //Setting for noggins UAT OCA
 	        ArrayList<String> cliArgsCap = new ArrayList<String>();
