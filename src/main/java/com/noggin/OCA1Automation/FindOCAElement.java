@@ -565,6 +565,13 @@ private WebElement locateButton(WebElement el,String label) {
 	
 	 public void captureScreenShot(WebDriver driver,String FileName){
 		 
+		 //pause for 3 secs so page loads up
+		 try {
+			 Thread.sleep(3000);
+		 	} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		 	}
 		 //get current date
 		 DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy_HHmmss.SSS");
 		 Date currentDate=new Date();
