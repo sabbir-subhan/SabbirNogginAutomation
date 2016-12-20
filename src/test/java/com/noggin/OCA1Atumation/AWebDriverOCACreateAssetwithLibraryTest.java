@@ -96,7 +96,7 @@ public class AWebDriverOCACreateAssetwithLibraryTest {
 	  
 	  //Find Name field input box and write something
 	  //Also enter a random Name followed by a prefix.
-	  WebElement wgtData1=TestOCA.FindWebElementUsingID("wgt-Data-112101");
+	  WebElement wgtData1=TestOCA.FindWebElementUsingID("wgt-Data-76001");
 	  wgtData1.sendKeys("Automantion :"+TestOCA.RandomText());
 	  
 	  //Click Save button and finish creating asset
