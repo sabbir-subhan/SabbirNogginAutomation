@@ -579,10 +579,30 @@ private WebElement locateButton(WebElement el,String label) {
 
 		  // Take screenshot and store as a file format
 		  File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		  
+		  //Make a new folder in C:/selenium
+		  String strDirectoy ="C:\\selenium\\"+FileName;
+		  try{
+		  					  
+			// Create one directory
+			  boolean success = (
+			  new File(strDirectoy)).mkdir();
+			  
+			  if (success) {
+				  System.out.println("Directory: " 
+				   + strDirectoy + " created");
+				  }  
+			  
+		  }
+		  catch(Exception e){//Catch exception if any
+			  	System.err.println("Error: " + e.getMessage());
+		  }
+		  
+		  //create a new file under newly created directory and save the file
 		  	try {
-		  // now copy the  screenshot to desired location using copyFile method
+		  		// now copy the  screenshot to desired location using copyFile method
 
-		  		FileUtils.copyFile(src, new File("C:/selenium/"+FileName+"DateTime"+DateTimeStr+".png"));
+		  		FileUtils.copyFile(src, new File(strDirectoy+"\\"+FileName+"DateTime"+DateTimeStr+".png"));
 		       }
 
 		  	catch (IOException e)
