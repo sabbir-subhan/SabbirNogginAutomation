@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.OutputType;
@@ -200,6 +201,9 @@ private WebElement locateNodeofAExapandingTree(WebElement target, String search)
 					System.out.println(XpathExpressionTopTreeElementDiv);	
 					WebElement TopTreeElementDiv=target.findElement(By.xpath(XpathExpressionTopTreeElementDiv));
 					System.out.println(TopTreeElementDiv.getAttribute("class"));
+					//scroll the element into view
+					this.ScrollElementIntoView(TopTreeElementDiv);
+					
 						if(TopTreeElementDiv.getAttribute("class").contains("collapsed")){
 							System.out.println(XpathExpressionTopTreeElementDiv+ "is NO exapanded, ready expand");
 							return TopTreeElementDiv;
@@ -225,8 +229,20 @@ private WebElement locateNodeofAExapandingTree(WebElement target, String search)
 	}
 
 
+private void ScrollElementIntoView(WebElement topTreeElementDiv) {
+
+	// Create instance of Javascript executor and down cast web driver to a Java script executor instance
+	JavascriptExecutor je = (JavascriptExecutor) driver;
+	// now execute query which actually will scroll until that element is not visible on page.
+	je.executeScript("arguments[0].scrollIntoView(true);",topTreeElementDiv);
+	System.out.println("Java script scrolling !!!");
+	}
+
+
 private void collapseTree(WebElement topTreeElementDiv) {
 			WebElement TopTreeElementDiv1=topTreeElementDiv;
+			 
+		
 			TopTreeElementDiv1.click();
 			// Deafult pause when Top Menu after Collapsing in 3 sec
 			long pause=3000;//in Mili sec
