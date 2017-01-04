@@ -30,8 +30,7 @@ public class WebDriverOCAFirstTreeExpandListTest {
 	  System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 	  driver = new ChromeDriver();
-	  //Add 60 secs for all page load in OCA
-	  driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+
 	 
 	  //Add 30 secs implicit wait for each web elements
 	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -40,7 +39,7 @@ public class WebDriverOCAFirstTreeExpandListTest {
 	  
 	  driver.get("https://im1.oca-test-beta-el7sec.lan.noggin.com.au/directlogin.html");
 	  Thread.sleep(2000);
-	  //git?? try
+	
  }
 
   @Test
@@ -91,11 +90,11 @@ public class WebDriverOCAFirstTreeExpandListTest {
 	  
 	  
 	  //Find and Click on Second node of tree
-	  WebElement Child2NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-DocumentFolders&amp;@&amp;Asset documents&amp;@&amp;NOGGIN Parent Asset&amp;@&amp;AR Parent Asset");
+	  WebElement Child2NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-DocumentFolders&amp;@&amp;Asset documents&amp;@&amp;NOGGIN Parent Asset&amp;@&amp;GK Parent Asset");
 	  Child2NodeofTree.click();
 	  
 	  //Find and Click on Third node of tree
-	  WebElement Child3NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-DocumentFolders&amp;@&amp;Asset documents&amp;@&amp;NOGGIN Parent Asset&amp;@&amp;AR Parent Asset&amp;@&amp;Easter Beaches Local Area Command");
+	  WebElement Child3NodeofTree=TestOCA.FindandReturnWebElement("tree|@|wgt-DocumentFolders&amp;@&amp;Asset documents&amp;@&amp;NOGGIN Parent Asset&amp;@&amp;GK Parent Asset&amp;@&amp;Police Car");
 	  Child3NodeofTree.click();
 	  
 	  
