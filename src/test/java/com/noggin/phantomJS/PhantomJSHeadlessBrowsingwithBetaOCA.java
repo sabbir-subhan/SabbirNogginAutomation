@@ -60,12 +60,12 @@ public class PhantomJSHeadlessBrowsingwithBetaOCA {
 		  //Find WebElement user name
 		  WebElement wgtUsername=a.FindWebElementUsingID("wgt-Username");
 		  //Selenium Action on WebElement
-		  wgtUsername.sendKeys("sabbir");
+		  wgtUsername.sendKeys("ssubhan");
 		  
 		//Find WebElement wgt-Password
 		  WebElement wgtPassword=a.FindWebElementUsingID("wgt-Password");
 		  //Selenium Action on WebElement
-		  wgtPassword.sendKeys("1234test");
+		  wgtPassword.sendKeys("123test");
 		  a.captureScreenShot(driver,TestCaseName);//should take screenshot and put in a PNG file with file name same as Javafilename
 		//Find Signin button
 		  WebElement SignInButton=a.FindandReturnWebElement("button|@|Sign In");

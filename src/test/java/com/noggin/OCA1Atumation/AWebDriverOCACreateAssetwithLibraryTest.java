@@ -52,12 +52,12 @@ public class AWebDriverOCACreateAssetwithLibraryTest {
 	  //Find WebElement user name
 	  WebElement wgtUsername=TestOCA.FindWebElementUsingID("wgt-Username");
 	  //Selenium Action on WebElement
-	  wgtUsername.sendKeys("sabbir");
+	  wgtUsername.sendKeys("ssubhan");
 	  
 	//Find WebElement wgt-Password
 	  WebElement wgtPassword=TestOCA.FindWebElementUsingID("wgt-Password");
 	  //Selenium Action on WebElement
-	  wgtPassword.sendKeys("1234test");
+	  wgtPassword.sendKeys("123test");
 	 
 	//Find Signin button
 	  WebElement SignInButton=TestOCA.FindandReturnWebElement("button|@|Sign In");
@@ -96,7 +96,7 @@ public class AWebDriverOCACreateAssetwithLibraryTest {
 	  
 	  //Find Name field input box and write something
 	  //Also enter a random Name followed by a prefix.
-	  WebElement wgtData1=TestOCA.FindWebElementUsingID("wgt-Data-76001");
+	  WebElement wgtData1=TestOCA.FindWebElementUsingID("wgt-Data-99201");
 	  wgtData1.sendKeys("Automantion :"+TestOCA.RandomText());
 	  
 	  //Click Save button and finish creating asset

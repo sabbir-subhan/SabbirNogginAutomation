@@ -596,8 +596,8 @@ private WebElement locateButton(WebElement el,String label) {
 		  // Take screenshot and store as a file format
 		  File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		  
-		  //Make a new folder in C:/selenium
-		  String strDirectoy ="C:\\selenium\\"+FileName;
+		  //Make a new folder in C:/seleniumScreenshot
+		  String strDirectoy ="C:\\seleniumScreenshot\\"+FileName+dateFormat;
 		  try{
 		  					  
 			// Create one directory

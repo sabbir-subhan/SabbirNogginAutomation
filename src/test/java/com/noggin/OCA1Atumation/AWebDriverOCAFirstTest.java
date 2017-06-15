@@ -43,7 +43,7 @@ public class AWebDriverOCAFirstTest {
 
 	  FindOCAElement TestOCA=new FindOCAElement(driver);
 	  TestOCA.captureScreenShot(driver,TestCaseName);//should take screenshot and put in a PNG file with file name same as Javafilename
-	  WebElement DirectLoginButton = driver.findElement(By.id("wgt-7"));
+	  WebElement DirectLoginButton = driver.findElement(By.id("wgt-8"));
 	  DirectLoginButton.click();
 	  Thread.sleep(5000);
 	  WebElement UserNameTextBox=driver.findElement(By.id("wgt-Username"));
@@ -52,8 +52,8 @@ public class AWebDriverOCAFirstTest {
 	  
 	  //Enter UserName and Password
 	  
-	  UserNameTextBox.sendKeys("sabbir");
-	  PasswordTextBox.sendKeys("1234test");
+	  UserNameTextBox.sendKeys("ssubhan");
+	  PasswordTextBox.sendKeys("123test");
 	  SignInButton.click();
 	  //User should land on OCA Home page
 	  //We will get the Ttile of page and verify that Title contains words

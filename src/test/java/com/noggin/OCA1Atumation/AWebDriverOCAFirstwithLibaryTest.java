@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import com.noggin.OCA1Automation.FindOCAElement;
+import com.noggin.OCA1Automation.*;
 
 
 public class AWebDriverOCAFirstwithLibaryTest {
@@ -37,9 +37,11 @@ public class AWebDriverOCAFirstwithLibaryTest {
   public void OCATestwithMenuAndSubMenu() throws Exception {
 	  
 	  FindOCAElement a=new FindOCAElement(driver);
+	  HighlightElement highlight=new HighlightElement();
 	  //a.FindWebElementAndAction(driver, "wgt-7", "Click");
 	  WebElement DirectLoginButton=a.FindandReturnWebElement("button|@|Direct login");
 	  //a.isElementPresent(DirectLoginButton);
+	  highlight.highlightElement(driver, DirectLoginButton);
 	  DirectLoginButton.click();
 	  
 	 
@@ -47,30 +49,36 @@ public class AWebDriverOCAFirstwithLibaryTest {
 	  //Find WebElement user name
 	  WebElement wgtUsername=a.FindWebElementUsingID("wgt-Username");
 	  //Selenium Action on WebElement
-	  wgtUsername.sendKeys("sabbir");
+	  highlight.highlightElement(driver, wgtUsername);
+	  wgtUsername.sendKeys("ssubhan");
 	  
 	//Find WebElement wgt-Password
 	  WebElement wgtPassword=a.FindWebElementUsingID("wgt-Password");
 	  //Selenium Action on WebElement
-	  wgtPassword.sendKeys("1234test");
+	  highlight.highlightElement(driver, wgtPassword);
+	  wgtPassword.sendKeys("123test");
 	  
 	//Find Signin button
 	  WebElement SignInButton=a.FindandReturnWebElement("button|@|Sign In");
 	  //Selenium Action on WebElement
+	  highlight.highlightElement(driver, SignInButton);
 	  SignInButton.click();
 	  
 	  //We will go Settings->OCA designer->Lists
 	  //Start
 	  //Mouse over on to Settings Top menu
 	  WebElement SettingsTopMenu=a.FindandReturnWebElement("topmenu|@|Settings");
+	  highlight.highlightElement(driver, SettingsTopMenu);
 	  a.MouseOverMenu(SettingsTopMenu);
 	  
 	  //Find and Mouse over submenu-OCA designer
 	  WebElement OCADesignerSubMenu=a.FindandReturnWebElement("submenu|@|0:OCA designer");
+	  highlight.highlightElement(driver, OCADesignerSubMenu);
 	  a.MouseOverMenu(OCADesignerSubMenu);
 	  
 	//Find and Mouse over submenu-Lists
 	  WebElement ListsSubMenu=a.FindandReturnWebElement("submenu|@|1:Lists");
+	  highlight.highlightElement(driver, ListsSubMenu);
 	  a.MouseOverMenu(ListsSubMenu);
 	  //End
 	  
@@ -78,18 +86,22 @@ public class AWebDriverOCAFirstwithLibaryTest {
 	  //Start
 	  //Mouse over on to Settings Top menu
 	  WebElement SettingsTopMenu1=a.FindandReturnWebElement("topmenu|@|Settings");
+	  highlight.highlightElement(driver, SettingsTopMenu1);
 	  a.MouseOverMenu(SettingsTopMenu1);
 	  
 	  //Find and Mouse over submenu-OCA designer
 	  WebElement OCADesignerSubMenu1=a.FindandReturnWebElement("submenu|@|0:OCA designer");
+	  highlight.highlightElement(driver, OCADesignerSubMenu1);
 	  a.MouseOverMenu(OCADesignerSubMenu1);
 	  
 	//Find and Mouse over submenu-Incidents
 	  WebElement IncidentsSubMenu=a.FindandReturnWebElement("submenu|@|1:Incidents");
+	  highlight.highlightElement(driver, IncidentsSubMenu);
 	  a.MouseOverMenu(IncidentsSubMenu);
 	  
 	//Find and Mouse over submenu-Incidents
 	  WebElement AssetTypeSubMenu=a.FindandReturnWebElement("submenu|@|2:Asset types");
+	  highlight.highlightElement(driver, AssetTypeSubMenu);
 	  a.MouseOverMenu(AssetTypeSubMenu);
 	  
 	  //End
@@ -98,14 +110,17 @@ public class AWebDriverOCAFirstwithLibaryTest {
 	  //start
 	  //Incidents top menu
 	  WebElement IncidentsTopMenu=a.FindandReturnWebElement("topmenu|@|Incidents");
+	  highlight.highlightElement(driver, IncidentsTopMenu);
 	  a.MouseOverMenu(IncidentsTopMenu);
 	  
 	  //Plans submenu
 	  WebElement PlanSubMenu=a.FindandReturnWebElement("submenu|@|0:Plans");
+	  highlight.highlightElement(driver, PlanSubMenu);
 	  a.MouseOverMenu(PlanSubMenu);
 	  
 	//Plans submenu
 	  WebElement PlanSubSubMenu=a.FindandReturnWebElement("submenu|@|1:Plans");
+	  highlight.highlightElement(driver, PlanSubSubMenu);
 	  a.MouseOverMenu(PlanSubSubMenu);
 	 
 

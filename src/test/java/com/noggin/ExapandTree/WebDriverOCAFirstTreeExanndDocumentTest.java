@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import com.noggin.OCA1Automation.FindOCAElement;
 
+import com.noggin.OCA1Automation.*;
 import junit.framework.Assert;
 
 
@@ -46,10 +47,13 @@ public class WebDriverOCAFirstTreeExanndDocumentTest {
   @Test
   public void OCAFirstTreeExpandDocumentTest() throws Exception {
 	  
+	  HighlightElement highLight=new HighlightElement();
 	  FindOCAElement TestOCA=new FindOCAElement(driver);
 	  //a.FindWebElementAndAction(driver, "wgt-7", "Click");
 	  WebElement DirectLoginButton=TestOCA.FindandReturnWebElement("button|@|Direct login");
 	  //a.isElementPresent(DirectLoginButton);
+	  
+	  highLight.highlightElement(driver, DirectLoginButton);
 	  DirectLoginButton.click();
 	  
 	 
@@ -57,12 +61,12 @@ public class WebDriverOCAFirstTreeExanndDocumentTest {
 	  //Find WebElement user name
 	  WebElement wgtUsername=TestOCA.FindWebElementUsingID("wgt-Username");
 	  //Selenium Action on WebElement
-	  wgtUsername.sendKeys("sabbir");
+	  wgtUsername.sendKeys("ssubhan");
 	  
 	//Find WebElement wgt-Password
 	  WebElement wgtPassword=TestOCA.FindWebElementUsingID("wgt-Password");
 	  //Selenium Action on WebElement
-	  wgtPassword.sendKeys("1234test");
+	  wgtPassword.sendKeys("123test");
 	  
 	//Find Signin button
 	  WebElement SignInButton=TestOCA.FindandReturnWebElement("button|@|Sign In");
