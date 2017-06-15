@@ -54,12 +54,12 @@ public class AWebDriverOCAFirstModalTest {
 	  //Find WebElement user name
 	  WebElement wgtUsername=TestOCA.FindWebElementUsingID("wgt-Username");
 	  //Selenium Action on WebElement
-	  wgtUsername.sendKeys("sabbirnz");
+	  wgtUsername.sendKeys("sHigh");
 	  
 	//Find WebElement wgt-Password
 	  WebElement wgtPassword=TestOCA.FindWebElementUsingID("wgt-Password");
 	  //Selenium Action on WebElement
-	  wgtPassword.sendKeys("123test");
+	  wgtPassword.sendKeys("s@bb1r123");
 	  
 	//Find Signin button
 	  WebElement SignInButton=TestOCA.FindandReturnWebElement("button|@|Sign In");
