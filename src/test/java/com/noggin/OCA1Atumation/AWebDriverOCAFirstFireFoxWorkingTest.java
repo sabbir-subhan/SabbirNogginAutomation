@@ -24,16 +24,15 @@ public class AWebDriverOCAFirstFireFoxWorkingTest {
 	 //Prints Out the Test Case Name in the console for debugging purpose
 	  String TestCaseName = this.getClass().getName();
 	  System.out.println("TEST CASE RUNNING :"+ TestCaseName);
-	  //System.setProperty("webdriver.gerko.driver","geckodriver.exe");
-	  //Need to use FireFox Profile 
-	  //Create a Profile in FireFox called "selenium"
-	  //Open up FireFox profile manager using  firefox.exe -p run menu 
-	  //create a profile called selenium and set uo proxy configuration and accept SSL certificate for interanl OCAs
-
-	  	ProfilesIni profile = new ProfilesIni();
-	  	FirefoxProfile myprofile = profile.getProfile("selenium");
-	    WebDriver driver = new FirefoxDriver(myprofile);
-	   // DesiredCapabilities dc = DesiredCapabilities.firefox();
+	  //need latest gecko driver
+	  System.setProperty("webdriver.gecko.driver","geckodriver.exe");
+	  //creating porfile
+	  ProfilesIni profile = new ProfilesIni();
+	  
+	  FirefoxProfile QAProfile = profile.getProfile("selenium");
+	   
+	  WebDriver driver = new FirefoxDriver(QAProfile);
+	  //WebDriver driver=new FirefoxDriver();
 	    
 		driver.manage().window().maximize();
 		//Add 10 secs implicit wait for each web elements
@@ -42,9 +41,9 @@ public class AWebDriverOCAFirstFireFoxWorkingTest {
 		driver.get("https://im1.oca-test-beta-el7sec.lan.noggin.com.au/directlogin.html");
 		Thread.sleep(5000);
 
-		WebElement DirectLoginButton = driver.findElement(By.id("wgt-7"));
+		WebElement DirectLoginButton = driver.findElement(By.id("wgt-8"));
 		DirectLoginButton.click();
-	    Thread.sleep(5000);
+	    Thread.sleep(2000);
 	    
 		WebElement UserNameTextBox=driver.findElement(By.id("wgt-Username"));
 		WebElement PasswordTextBox=driver.findElement(By.id("wgt-Password"));
@@ -52,8 +51,8 @@ public class AWebDriverOCAFirstFireFoxWorkingTest {
 	  
 	  //Enter UserName and Password
 	  
-	  UserNameTextBox.sendKeys("sabbir");
-	  PasswordTextBox.sendKeys("1234test");
+	  UserNameTextBox.sendKeys("ssubhan");
+	  PasswordTextBox.sendKeys("123test");
 	  //seems like FireFox does not like space in search, so using xpath 
 	  WebElement SignInButton=driver.findElement(By.xpath("//*[@id='wgt-Sign In']"));
 	  SignInButton.click();
