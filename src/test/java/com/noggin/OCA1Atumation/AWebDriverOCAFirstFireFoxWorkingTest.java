@@ -67,6 +67,6 @@ public class AWebDriverOCAFirstFireFoxWorkingTest {
 	
    // Let the user actually see something! x
 	  
-	  driver.quit();
+	  driver.close();
   }
 }
