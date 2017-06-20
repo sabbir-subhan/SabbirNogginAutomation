@@ -229,7 +229,7 @@ private WebElement locateNodeofAExapandingTree(WebElement target, String search)
 	}
 
 
-private void ScrollElementIntoView(WebElement topTreeElementDiv) {
+public void ScrollElementIntoView(WebElement topTreeElementDiv) {
 
 	// Create instance of Javascript executor and down cast web driver to a Java script executor instance
 	JavascriptExecutor je = (JavascriptExecutor) driver;
