@@ -30,7 +30,7 @@ public class AWebDriverOCAFirstwithLibaryTest {
 	  driver.manage().window().maximize();
 	  
 	  driver.get("https://im1.oca-test-beta-el7sec.lan.noggin.com.au/directlogin.html");
-	  Thread.sleep(5000);
+	  Thread.sleep(2000);
  }
 
   @Test
@@ -41,6 +41,7 @@ public class AWebDriverOCAFirstwithLibaryTest {
 	  //a.FindWebElementAndAction(driver, "wgt-7", "Click");
 	  WebElement DirectLoginButton=a.FindandReturnWebElement("button|@|Direct login");
 	  //a.isElementPresent(DirectLoginButton);
+	  a.ScrollElementIntoView(DirectLoginButton);
 	  highlight.highlightElement(driver, DirectLoginButton);
 	  DirectLoginButton.click();
 	  
