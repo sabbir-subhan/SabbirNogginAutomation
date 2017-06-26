@@ -24,8 +24,8 @@ public class AWebDriverOCAFirstwithLibaryTest {
 	  System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 	  driver = new ChromeDriver();
-	  //Add 60 secs implicit wait for each web elements
-	  driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+	  //Add 30 secs implicit wait for each web elements
+	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  //Maximize browser window
 	  driver.manage().window().maximize();
 	  
