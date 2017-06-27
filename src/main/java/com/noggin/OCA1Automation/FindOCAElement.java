@@ -38,9 +38,9 @@ public class FindOCAElement {
 			
 		//Done - target needs to be set to the "body" element in the root window
 			WebElement target = driver.findElement(By.tagName("body"));
-			System.out.println(target.getAttribute("onload"));
-			System.out.println(driver.getCurrentUrl());
-			System.out.println(driver.getTitle());
+			////System.out.println(target.getAttribute("onload"));
+			////System.out.println(driver.getCurrentUrl());
+			////System.out.println(driver.getTitle());
 		/*Code to convert IDE string to WebElement
 		 * Use Brett Js script as guide
 		 */
@@ -54,8 +54,8 @@ public class FindOCAElement {
 				String rule = targetrule[0];
 				String search = targetrule[1];
 			
-				System.out.println(rule);
-				System.out.println(search);
+				////System.out.println(rule);
+				////System.out.println(search);
 			
 				switch(rule){
 					case "dashid":
@@ -73,7 +73,7 @@ public class FindOCAElement {
 					{
 						//TODO - use 'driver' directly to get the iframe with name _ngbasis_modalwin_ and set target to the "body" element inside that iframe
 						//First find the element with \
-						System.out.println("Lets find iframe!!");
+						////System.out.println("Lets find iframe!!");
 						target=this.locateIframeBodayTag(target);
 						break;
 					}
@@ -96,28 +96,28 @@ public class FindOCAElement {
 					
 					case "screentabsbutton":
 					{
-						System.out.println("We are in screetabsbutton");
+						////System.out.println("We are in screetabsbutton");
 						target = this.locateScreenTabsButton(target,search);
 						break;
 					}
 					
 					case "contextmenu":
 					{
-						System.out.println("We are in CONTEXTMENU");
+						////System.out.println("We are in CONTEXTMENU");
 						target = this.locateContextMenuItem(target,search);
 						break;
 					}
 					case "tree":
 					case "treeexp":
 					{
-						System.out.println("We are in tree or treeExpand");
+						////System.out.println("We are in tree or treeExpand");
 						target=this.locateNodeofAExapandingTree(target,search);
 						break;
 					}
 					
 					case "treeexpEvent":
 					{
-						System.out.println("We are in Event Tree Expan");
+						////System.out.println("We are in Event Tree Expan");
 						target=this.locateNodeofExpandingEventTree(target,search);
 					}
 										
@@ -137,8 +137,8 @@ public class FindOCAElement {
 private WebElement locateNodeofExpandingEventTree(WebElement target, String search) {
 	
 		String[] parts=search.split(Pattern.quote("&amp;@&amp;"));
-		System.out.println(parts[0]);
-		System.out.println(parts[1]);
+		////System.out.println(parts[0]);
+		////System.out.println(parts[1]);
 		
 		String wgtId=parts[0];//first part will id
 		String TreeTopNode=parts[parts.length-1];
@@ -146,27 +146,27 @@ private WebElement locateNodeofExpandingEventTree(WebElement target, String sear
 		//Find out the plus sign of next Root Event
 		String xpathExpressionPlusSignforRootLevelEventTRElement=("//*[@id='"+wgtId+"']//*[text()='"+TreeTopNode+"']/..");
 		
-		System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement);	
+		////System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement);	
 		WebElement TopTreeElementTR=target.findElement(By.xpath(xpathExpressionPlusSignforRootLevelEventTRElement));
 		
-		System.out.println(TopTreeElementTR.getAttribute("class"));
+		////System.out.println(TopTreeElementTR.getAttribute("class"));
 		if(TopTreeElementTR.getAttribute("class").contains("collapsed")){
-			System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement+ "is NO exapanded, ready expand");
+			////System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement+ "is NO exapanded, ready expand");
 			WebElement TopTreeElementTRPlusSign=target.findElement(By.xpath(xpathExpressionPlusSignforRootLevelEventTRElement+"/td[1]/div/span"));
 			return TopTreeElementTRPlusSign;
 		}
 		else{
 			if(TopTreeElementTR.getAttribute("class").contains("expanded")){
-			System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement+ "is allready exapanded");
+			////System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement+ "is allready exapanded");
 			WebElement TopTreeElementTRPlusSign=target.findElement(By.xpath(xpathExpressionPlusSignforRootLevelEventTRElement+"/td[1]/div/span"));
 			//collapse top level tree
 			this.collapseTree(TopTreeElementTRPlusSign);
-			System.out.println(TopTreeElementTRPlusSign+ "is now collapsed");
+			////System.out.println(TopTreeElementTRPlusSign+ "is now collapsed");
 			return TopTreeElementTRPlusSign;
 			}
 			else{
 				
-				System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement+ "does not have child element. So let selenium click");
+				////System.out.println(xpathExpressionPlusSignforRootLevelEventTRElement+ "does not have child element. So let selenium click");
 				//Selenium need to click Label
 				String XpathExpressionLabel=("//*[@id='"+wgtId+"']//*[text()='"+TreeTopNode+"']");
 				WebElement TopTreeLabel=target.findElement(By.xpath(XpathExpressionLabel));
@@ -181,8 +181,8 @@ private WebElement locateNodeofExpandingEventTree(WebElement target, String sear
 private WebElement locateNodeofAExapandingTree(WebElement target, String search) {
 			//Auto-generated method stub
 			String[] parts=search.split(Pattern.quote("&amp;@&amp;"));
-			System.out.println(parts[0]);
-			System.out.println(parts[1]);
+			////System.out.println(parts[0]);
+			////System.out.println(parts[1]);
 			
 			//First part is the wgt id, the rest is the hierarchy of labels, note this means that duplicate names are not supported, at least
 			//not selecting any but the first
@@ -198,26 +198,26 @@ private WebElement locateNodeofAExapandingTree(WebElement target, String search)
 			
 						//Now we deriver xpath expression for div class of(3 level up) TreeNode and check value of calss attribute of this element
 					String XpathExpressionTopTreeElementDiv=("//*[@id='"+wgtId+"']/ul/li//*[text()='"+TreeTopNode+"']/../../..");
-					System.out.println(XpathExpressionTopTreeElementDiv);	
+					////System.out.println(XpathExpressionTopTreeElementDiv);	
 					WebElement TopTreeElementDiv=target.findElement(By.xpath(XpathExpressionTopTreeElementDiv));
-					System.out.println(TopTreeElementDiv.getAttribute("class"));
+					////System.out.println(TopTreeElementDiv.getAttribute("class"));
 					//scroll the element into view
 					this.ScrollElementIntoView(TopTreeElementDiv);
 					
 						if(TopTreeElementDiv.getAttribute("class").contains("collapsed")){
-							System.out.println(XpathExpressionTopTreeElementDiv+ "is NO exapanded, ready expand");
+							////System.out.println(XpathExpressionTopTreeElementDiv+ "is NO exapanded, ready expand");
 							return TopTreeElementDiv;
 						}
 						else{
 							if(TopTreeElementDiv.getAttribute("class").contains("expanded")){
-								System.out.println(XpathExpressionTopTreeElementDiv+ "is allready exapanded");
+								////System.out.println(XpathExpressionTopTreeElementDiv+ "is allready exapanded");
 								//collapse top level tree
 								this.collapseTree(TopTreeElementDiv);
-								System.out.println(XpathExpressionTopTreeElementDiv+ "is now collapsed");
+								////System.out.println(XpathExpressionTopTreeElementDiv+ "is now collapsed");
 								return TopTreeElementDiv;
 							}
 							else{
-								System.out.println(XpathExpressionTopTreeElementDiv+ "does not have child element. So let selenium click");
+								////System.out.println(XpathExpressionTopTreeElementDiv+ "does not have child element. So let selenium click");
 								//Selenium need to click Label
 								String XpathExpressionLabel=("//*[@id='"+wgtId+"']/ul/li//*[text()='"+TreeTopNode+"']");
 								WebElement TopTreeLabel=target.findElement(By.xpath(XpathExpressionLabel));
@@ -235,7 +235,7 @@ public void ScrollElementIntoView(WebElement topTreeElementDiv) {
 	JavascriptExecutor je = (JavascriptExecutor) driver;
 	// now execute query which actually will scroll until that element is not visible on page.
 	je.executeScript("arguments[0].scrollIntoView(true);",topTreeElementDiv);
-	System.out.println("Java script scrolling !!!");
+	////System.out.println("Java script scrolling !!!");
 	}
 
 
@@ -261,7 +261,7 @@ private WebElement locateIframeBodayTag(WebElement target) {
 		//  Auto-generated method stub
 		this.switchToiframe("_ngbasis_modalwin_");//iframe name is static across OCA as per Brett
 		WebElement IframeBodyElemet = driver.findElement(By.tagName("body"));
-		System.out.println(IframeBodyElemet.getAttribute("onunload"));
+		////System.out.println(IframeBodyElemet.getAttribute("onunload"));
 		target=IframeBodyElemet;
 		return target;
 		
@@ -278,7 +278,7 @@ private WebElement locateContextMenuItem(WebElement target, String search) {
 			for(int i=0;i<AllContextMenuItems.size();i++){
 				if(AllContextMenuItems.get(i).getText().contentEquals(search)){
 					target=AllContextMenuItems.get(i);
-					System.out.println(target.getText());
+					////System.out.println(target.getText());
 					return target;
 				}
 			}
@@ -286,7 +286,7 @@ private WebElement locateContextMenuItem(WebElement target, String search) {
 		else{
 			//if there is only one  in OCA
 			target=AllContextMenuItems.get(0);
-			System.out.println(target.getText());
+			////System.out.println(target.getText());
 			return target;
 		}
 		return null;
@@ -297,8 +297,8 @@ private WebElement locateScreenTabsButton(WebElement target, String search) {
 		//Auto-generated method stub
 		String wgtID=search.substring(0, search.indexOf("="));
 		String buttonLabel=search.substring(search.indexOf("=")+1);
-		System.out.println(wgtID);
-		System.out.println(buttonLabel);
+		////System.out.println(wgtID);
+		////System.out.println(buttonLabel);
 		WebElement ScreenTabsButton=target.findElement(By.id(wgtID));
 		if(ScreenTabsButton!=null){
 			List <WebElement> Buttons=ScreenTabsButton.findElements(By.cssSelector("div.tools > div > a"));
@@ -306,7 +306,7 @@ private WebElement locateScreenTabsButton(WebElement target, String search) {
 			for(int i=0;i<Buttons.size();i++){
 				if(Buttons.get(i).getText().contentEquals(buttonLabel)){
 					ScreenTabsButton=Buttons.get(i);
-					System.out.println(ScreenTabsButton.getText());
+					////System.out.println(ScreenTabsButton.getText());
 					return ScreenTabsButton;
 				}
 			}
@@ -328,21 +328,21 @@ private WebElement locateSubMenu(WebElement target,String search) {
 				{
 					String XpathExpression="//div[contains(@class,'layer0')]//*[text()='"+label+"']";
 					WebElement SubMenu=target.findElement(By.xpath(XpathExpression));
-					System.out.println(SubMenu.getText());
+					////System.out.println(SubMenu.getText());
 					return SubMenu;
 				}
 				case "1":
 				{
 					String XpathExpression="//div[contains(@class,'layer0 focused expanded')]/../div[@class='children']//div[contains(@class,'layer1') and text()='"+label+"']";
 					WebElement SubMenu=driver.findElement(By.xpath(XpathExpression));
-					System.out.println(SubMenu.getText());
+					////System.out.println(SubMenu.getText());
 					return SubMenu;
 				}
 				case "2":
 				{
 					String XpathExpression="//div[contains(@class,'layer0 expanded')]/../div[@class='children']//div[contains(@class,'layer1') and text()='"+label+"']";
 					WebElement SubMenu=driver.findElement(By.xpath(XpathExpression));
-					System.out.println(SubMenu.getText());
+					////System.out.println(SubMenu.getText());
 					return SubMenu;
 				}
 
@@ -356,16 +356,16 @@ private WebElement locateButton(WebElement el,String label) {
 		
 		List <WebElement> ElementWithDivButtonCssSelector=el.findElements(By.cssSelector("div.button"));
 		
-		System.out.println(ElementWithDivButtonCssSelector.size());
+		////System.out.println(ElementWithDivButtonCssSelector.size());
 		
 		for (int j=0;j<ElementWithDivButtonCssSelector.size();j++){
-			System.out.println(ElementWithDivButtonCssSelector.get(j).getAttribute("class"));
+			////System.out.println(ElementWithDivButtonCssSelector.get(j).getAttribute("class"));
 			
 			if(this.hasClass(ElementWithDivButtonCssSelector.get(j),"capped-inline"))
 			{
 				WebElement ElementwithClasscontainsCappedInline=ElementWithDivButtonCssSelector.get(j).findElement(By.tagName("span"));
 				
-				System.out.println(ElementwithClasscontainsCappedInline.getText());
+				////System.out.println(ElementwithClasscontainsCappedInline.getText());
 				if(ElementwithClasscontainsCappedInline.getText().contentEquals(label)){
 								
 					return ElementwithClasscontainsCappedInline;
@@ -387,15 +387,15 @@ private WebElement locateButton(WebElement el,String label) {
     	 //
     	 List <WebElement> ElementWithdivlayer1CssSelector=target.findElements(By.cssSelector("#header-nav > div > div > div.layer0 > div.layer1"));
  		
- 		 System.out.println(ElementWithdivlayer1CssSelector.size());
+ 		 ////System.out.println(ElementWithdivlayer1CssSelector.size());
  		 
  		 for (int i=0;i<ElementWithdivlayer1CssSelector.size();i++){
- 			System.out.println(ElementWithdivlayer1CssSelector.get(i).getText());
+ 			////System.out.println(ElementWithdivlayer1CssSelector.get(i).getText());
  			 if(ElementWithdivlayer1CssSelector.get(i).getText().contentEquals(search)){
  				 WebElement TopMenuFound=ElementWithdivlayer1CssSelector.get(i);
  				 /*
  				 //we are also calling a pause here when top menu found
- 				 System.out.println("We are pausing for :" + pause);
+ 				 //System.out.println("We are pausing for :" + pause);
  				 try {
 					Thread.sleep(pause);
 				} catch (InterruptedException e) {
@@ -420,8 +420,8 @@ private WebElement locateButton(WebElement el,String label) {
 		}
 		
 		
-		System.out.println(IDEString); 
-		System.out.println(Action); 
+		////System.out.println(IDEString); 
+		////System.out.println(Action); 
 	
 	}
 	
@@ -430,7 +430,7 @@ private WebElement locateButton(WebElement el,String label) {
 		WebElement elementFound = driver.findElement(By.id(IDEString));
 		//if intraction is do something
 
-		System.out.println(IDEString); 
+		////System.out.println(IDEString); 
 		return elementFound;
 	
 	}
@@ -442,7 +442,7 @@ private WebElement locateButton(WebElement el,String label) {
 			String[] classNameSplited = el.getAttribute("class").split("\\s+");
 				
 				for (int i = 0; i < classNameSplited.length; i++) {
-					System.out.println(classNameSplited[i]);
+					////System.out.println(classNameSplited[i]);
 					if (classNameSplited[i].contentEquals(search)) {
 						return true;
 					}
@@ -456,12 +456,12 @@ private WebElement locateButton(WebElement el,String label) {
 	public void isElementPresent(WebElement element) {
 		if(element.isDisplayed()){			
 			//Reporter.log("Element: " + element.getText() + ", is available on a page - ");
-			System.out.println("Element: " + element.getText() + ", is available on a page - ");
+			////System.out.println("Element: " + element.getText() + ", is available on a page - ");
 		}
 		else{
             // Using the TestNG API for logging
           // Reporter.log("Element: " + element.getLocation().toString() + ", is not available on a page - ");
-            System.out.println("Element: " + element.getText() + ", is not available on a page - ");
+            ////System.out.println("Element: " + element.getText() + ", is not available on a page - ");
                            
     		}
 		}
@@ -501,7 +501,7 @@ private WebElement locateButton(WebElement el,String label) {
 						driver.switchTo().frame(FrameName);
 						}
 						catch(NoSuchFrameException e){
-							System.out.println("Modal is not visible");
+							////System.out.println("Modal is not visible");
 							e.printStackTrace();
 						}
 						try{
@@ -520,7 +520,7 @@ private WebElement locateButton(WebElement el,String label) {
 					ContextMenuItem.click();
 					}
 					catch (NoSuchElementException e){
-						System.out.println("WebElement is not found in page: "+driver.getCurrentUrl()+" with Title: "+driver.getTitle());
+						////System.out.println("WebElement is not found in page: "+driver.getCurrentUrl()+" with Title: "+driver.getTitle());
 						e.printStackTrace();
 					}
 						
@@ -551,21 +551,21 @@ private WebElement locateButton(WebElement el,String label) {
 			try{
 			waitforElementTobePresent.until(ExpectedConditions.presenceOfAllElementsLocatedBy((By.xpath(XpathExpression))));
 				if (driver.findElements(By.xpath(XpathExpression)).size()>1){
-					System.out.println("Total "+driver.findElements(By.xpath(XpathExpression)).size()+" Number of Element with Xpath :"+XpathExpression+" present in page :"+driver.getCurrentUrl()+" with Title: "+driver.getTitle());
+					////System.out.println("Total "+driver.findElements(By.xpath(XpathExpression)).size()+" Number of Element with Xpath :"+XpathExpression+" present in page :"+driver.getCurrentUrl()+" with Title: "+driver.getTitle());
 				}
 				else{
-					System.out.println("Total "+driver.findElements(By.xpath(XpathExpression)).size()+" Number of Element with Xpath :"+XpathExpression+" present in page :"+driver.getCurrentUrl()+" with Title: "+driver.getTitle());
+					////System.out.println("Total "+driver.findElements(By.xpath(XpathExpression)).size()+" Number of Element with Xpath :"+XpathExpression+" present in page :"+driver.getCurrentUrl()+" with Title: "+driver.getTitle());
 				}
 				
 			}
 			catch (NoSuchElementException e)
 			{
-				System.out.println("WebElement is not found in page: "+driver.getCurrentUrl()+" with Title: "+driver.getTitle()+ " with xpath expression :"+XpathExpression+" after waifing for :"+waitInSecs+" secs");
+				////System.out.println("WebElement is not found in page: "+driver.getCurrentUrl()+" with Title: "+driver.getTitle()+ " with xpath expression :"+XpathExpression+" after waifing for :"+waitInSecs+" secs");
 				e.printStackTrace();
 			}
 			catch (TimeoutException e)
 			{
-				System.out.println("WebElement is not found in page: "+driver.getCurrentUrl()+" with Title: "+driver.getTitle()+ " with xpath expression :"+XpathExpression+" after waifing for :"+waitInSecs+" secs");
+				////System.out.println("WebElement is not found in page: "+driver.getCurrentUrl()+" with Title: "+driver.getTitle()+ " with xpath expression :"+XpathExpression+" after waifing for :"+waitInSecs+" secs");
 				e.printStackTrace();
 			}
 		  
@@ -575,7 +575,7 @@ private WebElement locateButton(WebElement el,String label) {
 	public void IntractionWithElement(WebDriver driver,WebElement Element) {
 		this.driver=driver;
 		Element.click();
-		//System.out.println(IDEIntraction); 
+		////System.out.println(IDEIntraction); 
 	
 	}*/
 	
@@ -597,7 +597,7 @@ private WebElement locateButton(WebElement el,String label) {
 		  File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		  
 		  //Make a new folder in C:/seleniumScreenshot
-		  String strDirectoy ="C:\\seleniumScreenshot\\"+FileName+dateFormat;
+		  String strDirectoy ="C:\\seleniumScreenshot\\"+FileName+DateTimeStr;
 		  try{
 		  					  
 			// Create one directory
@@ -605,8 +605,7 @@ private WebElement locateButton(WebElement el,String label) {
 			  new File(strDirectoy)).mkdir();
 			  
 			  if (success) {
-				  System.out.println("Directory: " 
-				   + strDirectoy + " created");
+				  //System.out.println("Directory: " + strDirectoy + " created");
 				  }  
 			  
 		  }
@@ -625,7 +624,7 @@ private WebElement locateButton(WebElement el,String label) {
 
 		  	{
 
-		  		System.out.println(e.getMessage());
+		  		//System.out.println(e.getMessage());
 
 		    }
 

@@ -122,66 +122,7 @@ public class AWebDriverOCAFirstwithLibaryTest {
 	//Plans submenu
 	  WebElement PlanSubSubMenu=a.FindandReturnWebElement("submenu|@|1:Plans");
 	  highlight.highlightElement(driver, PlanSubSubMenu);
-	  a.MouseOverMenu(PlanSubSubMenu);
-	 
-
-	  
-	  
-	
-	  /*//Find and Mouse over submenu-OCA designer
-	  WebElement OCADesignerSubMenu=a.FindSubMenu("Settings", "OCA designer");
-	  a.MouseOverMenu(OCADesignerSubMenu);
-	
-	  //Find and Mouse over submenu-Incidents
-	  WebElement IncidentsSubMenu=a.FindSubMenu("OCA designer", "Incidents");
-	  a.MouseOverMenu(IncidentsSubMenu);
-	  
-		
-	  //Find and Mouse over submenu-Event types
-	  WebElement EventTypeSubMenu=a.FindSubMenu("Incidents", "Event types");
-	  a.MouseOverMenu(EventTypeSubMenu);
-	  
-	  
-	//Mouse over on to Settings Top menu
-	  WebElement TasksTopMenu=a.FindandReturnWebElement("topmenu|@|Tasks");
-	  a.MouseOverMenu(TasksTopMenu);
-	//Mouse over on to Settings Top menu
-	  WebElement IncidentsTopMenu=a.FindandReturnWebElement("topmenu|@|Incidents");
-	  a.MouseOverMenu(IncidentsTopMenu);
-	  */
-	  
-	//Find and Mouse over submenu
-	  
-	  
-	  
-	  
-	  
-	  //FindOCAElement c=new FindOCAElement();
-	  //a.FindWebElementAndAction("wgt-Password", "sendKeys", "1234test");
-	  //FindOCAElement d=new FindOCAElement();
-	  //a.FindWebElementAndAction("wgt-Sign In", "Click");
-	  
-	  //WebElement DirectLoginButton = driver.findElement(By.id("wgt-7"));
-	 // DirectLoginButton.click();
-	  //Thread.sleep(5000);
-	  //WebElement UserNameTextBox=driver.findElement(By.id("wgt-Username"));
-	 // WebElement PasswordTextBox=driver.findElement(By.id("wgt-Password"));
-	  //WebElement SignInButton=driver.findElement(By.id("wgt-Sign In"));
-	  
-	  //Enter UserName and Password
-	  
-	 //.sendKeys("sabbir");
-	 // PasswordTextBox.sendKeys("1234test");
-	 // SignInButton.click();
-	  //User should land on OCA Home page
-	  //We will get the Ttile of page and verify that Title contains words
-	  String Title=driver.getTitle();
-	  System.out.println(Title);
-	  
-	  //Now we will check if Title has "Home" and "Noggin OCA" in it
-	  //Assert.assertEquals("Home (20) - Noggin OCA",Title);
-	
-	  //Thread.sleep(5000);  // Let the user actually see something!
+	  a.MouseOverMenu(PlanSubSubMenu); 
 	  
   }
   @AfterClass
