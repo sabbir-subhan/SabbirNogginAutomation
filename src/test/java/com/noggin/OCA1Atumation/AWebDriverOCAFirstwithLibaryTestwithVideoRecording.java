@@ -48,7 +48,8 @@ public class AWebDriverOCAFirstwithLibaryTestwithVideoRecording {
 	  catch(Exception e){//Catch exception if any
 		  	System.err.println("Error: " + e.getMessage());
 	  		}
-	  //Created object of ATUTestRecorder //Provide path to store videos and file name format. 
+	  //Created object of ATUTestRecorder 
+	  //Provide directory path to store videos i first parameter,file name in second parameter and true/false in third parameter-false as third parameter for the constructor the audio recording will be disabled. 
 	  try {
 		  		recorder = new ATUTestRecorder(strDirectoy,"TestVideo-TestCase-"+TestCaseName+"-Date"+dateFormat.format(date),false);
 	  		} 
