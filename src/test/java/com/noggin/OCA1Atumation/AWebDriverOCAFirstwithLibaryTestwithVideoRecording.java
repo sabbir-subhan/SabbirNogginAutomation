@@ -1,10 +1,5 @@
 package com.noggin.OCA1Atumation;
-import java.io.File;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,60 +8,29 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.noggin.OCA1Automation.*;
 
-import atu.testrecorder.ATUTestRecorder;
-import atu.testrecorder.exceptions.ATUTestRecorderException;
-
 
 public class AWebDriverOCAFirstwithLibaryTestwithVideoRecording {
  WebDriver driver;
- ATUTestRecorder recorder;
+//We will start capturing video of Selenium Test Execution which will run on the browser
+ //First we instantiate an object of CaptureVidep class
+ 	CaptureVideo captureTestExecution=new CaptureVideo();
  
  @BeforeClass
  
  public void setup() throws InterruptedException{
 	  
+	 
 	 //Prints Out the Test Case Name in the console for debugging purpose
 	  String TestCaseName = this.getClass().getName();
 	  System.out.println("TEST CASE RUNNING :"+ TestCaseName);
+	  	  
+	  //Now we pass TestCaseName as parameter. Please, note that video filed will be created 
+	  //under C:\\SeleniumScriptVideos\\ folder with File name like "TestVideo-TestCase-<TestCaseName>-DateTime-<currentDateTime>" 
+	  captureTestExecution.captureVideo(TestCaseName);
+	  // Start the capture of the video
+	  captureTestExecution.startVideo();
 	  
-	  DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd HH-mm-ss"); 
-	  Date date = new Date(); 
-	  
-	 //Create directory to save the video
-	  String strDirectoy ="C:\\ScriptVideos\\";
-	  try{
-	  					  
-		// Create one directory
-		  boolean success = (
-		  new File(strDirectoy)).mkdir();
-		  
-		  if (success) {
-			  System.out.println("Directory: " + strDirectoy + " created");
-			  }  
-		  
-	  		}
-	  catch(Exception e){//Catch exception if any
-		  	System.err.println("Error: " + e.getMessage());
-	  		}
-	  //Created object of ATUTestRecorder 
-	  //Provide directory path to store videos i first parameter,file name in second parameter and true/false in third parameter-false as third parameter for the constructor the audio recording will be disabled. 
-	  try {
-		  		recorder = new ATUTestRecorder(strDirectoy,"TestVideo-TestCase-"+TestCaseName+"-Date"+dateFormat.format(date),false);
-	  		} 
-	  catch (ATUTestRecorderException e) {
-		// TODO Auto-generated catch block
-	  			e.printStackTrace();
-	} 
-	  //To start video recording. 
-	  try {
-		  		recorder.start();
-	  		} 
-	  catch (ATUTestRecorderException e) {
-		// TODO Auto-generated catch block
-		  		e.printStackTrace();
-	} 
-	  
-	 // Optional, if not specified, WebDriver will search your path for chromedriver.
+	  // Optional, if not specified, WebDriver will search your path for chromedriver.
 	  System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 	  driver = new ChromeDriver();
@@ -174,13 +138,9 @@ public class AWebDriverOCAFirstwithLibaryTestwithVideoRecording {
   @AfterClass
   public void close(){
 	  driver.quit();
-	//To stop video recording. 
-	  try {
-		recorder.stop();
-	} catch (ATUTestRecorderException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+	  //Now we stop capturing the test video
+	  captureTestExecution.stopVideo();;
+	
   }
 
 }
