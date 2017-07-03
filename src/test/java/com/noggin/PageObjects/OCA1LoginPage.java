@@ -2,7 +2,9 @@ package com.noggin.PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import com.noggin.OCA1Automation.HighlightElement;
+
+import com.noggin.OCA1AutomationSupport.FindOCAElement;
+import com.noggin.OCA1AutomationSupport.HighlightElement;
 
 public class OCA1LoginPage {
 	WebDriver driver;
@@ -36,6 +38,12 @@ public class OCA1LoginPage {
 	public void clickSigninButton() {
 		highlight.highlightElement(driver, driver.findElement(SigninButton));
 		driver.findElement(SigninButton).click();
+		
+	}
+	
+	public void scrollToViewLoginButton(){
+		FindOCAElement scrollLoginButton=new FindOCAElement(driver);
+		scrollLoginButton.ScrollElementIntoView(driver.findElement(DirectLoginButton));
 		
 	}
 }

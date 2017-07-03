@@ -6,7 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import com.noggin.OCA1Automation.*;
+
+import com.noggin.OCA1AutomationSupport.*;
 
 
 public class AWebDriverOCAFirstwithLibaryTestwithVideoRecording {

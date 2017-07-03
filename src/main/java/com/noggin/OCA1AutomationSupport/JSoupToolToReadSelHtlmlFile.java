@@ -1,4 +1,4 @@
-package com.noggin.OCA1Automation;
+package com.noggin.OCA1AutomationSupport;
 
 import java.io.File;
 import java.io.FileNotFoundException;

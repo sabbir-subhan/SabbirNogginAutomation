@@ -11,9 +11,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.noggin.OCA1Automation.FindOCAElement;
+import com.noggin.OCA1AutomationSupport.*;
 
-import com.noggin.OCA1Automation.*;
 import junit.framework.Assert;
 
 

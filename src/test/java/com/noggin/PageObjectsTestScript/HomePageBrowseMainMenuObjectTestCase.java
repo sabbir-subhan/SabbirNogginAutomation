@@ -2,22 +2,18 @@ package com.noggin.PageObjectsTestScript;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import com.noggin.OCA1AutomationSupport.*;
 import com.noggin.PageObjects.OCA1HomePage;
 import com.noggin.PageObjects.OCA1LoginPage;
 
-
-public class LoginPageObjectTestCase {
+public class HomePageBrowseMainMenuObjectTestCase {
  WebDriver driver;
- OCA1LoginPage oc1Loginpage;
+ OCA1LoginPage oca1Loginpage;
  OCA1HomePage oca1HomePage;
- 
+
  @BeforeClass
  
  public void setup() throws InterruptedException{
@@ -42,34 +38,33 @@ public class LoginPageObjectTestCase {
   public void test_Log_in_OCA_using_valid_credentials() throws InterruptedException{
 	  
 	//Create Login Page object
-	  oc1Loginpage=new OCA1LoginPage(driver);
+	  oca1Loginpage=new OCA1LoginPage(driver);
 	//Verify login page title
-	  String loginPageTitle = oc1Loginpage.getOCA1LoginPageTitle();
+	  String loginPageTitle = oca1Loginpage.getOCA1LoginPageTitle();
 	  System.out.println(loginPageTitle);
-	
-	  //Scroll Log in button
-	  oc1Loginpage.scrollToViewLoginButton();
 	  
+	//Scroll for Login button
+	  oca1Loginpage.scrollToViewLoginButton();
 	//Click DirectLogin button
-	  oc1Loginpage.clickDirectLoginButton();
+	  oca1Loginpage.clickDirectLoginButton();
 	  
 	//login to OCA1
 	//enter valid credentials
-	  oc1Loginpage.enterLoginDetail("ssubhan", "123test");
+	  oca1Loginpage.enterLoginDetail("ssubhan", "123test");
 	//click Sign in button
-	  oc1Loginpage.clickSigninButton();
+	  oca1Loginpage.clickSigninButton();
 
 	//Create Home Page object
 	  oca1HomePage=new OCA1HomePage(driver);
 	  //Verify OCA Home page title
 	  String homePageTitle=oca1HomePage.getOCA1HomePageTitle();
 	  System.out.println(homePageTitle);
-	 //Click PersonIcon on OCA Home Page
-	  oca1HomePage.clickBusinessAsUsualOnTop();
-	  oca1HomePage.clickClockIconOnTop();
-	  oca1HomePage.clickBellIconOnTop();
-	  oca1HomePage.clickPersonIconOnTop();
-	  oca1HomePage.clickPencilIconOnTop();
+	 //Mouse over Main Menu on OCA Home Page
+	  oca1HomePage.MouseOverToHomeMenu();
+	  //Mouse Over Contact Menu of OCA Home page
+	  oca1HomePage.MouseOverToContactMenu();
+	  //Mouse Over Communicate Menu of OCA Home page
+	  oca1HomePage.MouseOverToCommunicateMenu();
 	  Thread.sleep(2000);	 
   }
 	  

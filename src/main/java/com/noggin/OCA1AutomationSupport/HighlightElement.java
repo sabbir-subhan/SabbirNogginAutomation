@@ -1,4 +1,4 @@
-package com.noggin.OCA1Automation;
+package com.noggin.OCA1AutomationSupport;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

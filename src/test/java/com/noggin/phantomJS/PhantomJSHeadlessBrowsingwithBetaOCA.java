@@ -13,7 +13,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.noggin.OCA1Automation.FindOCAElement;
+import com.noggin.OCA1AutomationSupport.FindOCAElement;
 
 public class PhantomJSHeadlessBrowsingwithBetaOCA {
 	WebDriver driver;
