@@ -55,7 +55,7 @@ public class CaptureVideo {
 		 
 		 public void stopVideo(){
 			 try {
-			  		recorder.stop();;
+			  		recorder.stop();
 		  		} 
 		  catch (ATUTestRecorderException e) {
 			
