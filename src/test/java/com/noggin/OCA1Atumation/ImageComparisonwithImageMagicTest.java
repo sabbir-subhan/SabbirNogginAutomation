@@ -86,7 +86,7 @@ public class ImageComparisonwithImageMagicTest {
     //Compare Operation
     public void doComparison () throws Exception {
         
-    	   compareImagesWithImageMagick(baselineScreenShotPath, actualScreenShotPath, differenceScreenShotPath);
+    	   this.compareImagesWithImageMagick(baselineScreenShotPath, actualScreenShotPath, differenceScreenShotPath);
            
     }
     
