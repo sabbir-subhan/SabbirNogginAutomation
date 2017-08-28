@@ -7,7 +7,6 @@ import java.util.Date;
 
 import org.im4java.core.CompareCmd;
 import org.im4java.core.IMOperation;
-import org.im4java.process.ProcessStarter;
 import org.im4java.process.StandardStream;
 
 import org.testng.annotations.Test;
