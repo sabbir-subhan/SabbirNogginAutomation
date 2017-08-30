@@ -31,8 +31,8 @@ public class CompareImagePixelByPxiel {
 	    }
 	    // save img1's pixels to a new BufferedImage, and return it...
 	    // (May require TYPE_INT_ARGB)
-	    final BufferedImage out = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
-	    out.setRGB(0, 0, w, h, p1, 0, w);
-	    return out;
+	    final BufferedImage diffImage = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+	    diffImage.setRGB(0, 0, w, h, p1, 0, w);
+	    return diffImage;
 	}
 }

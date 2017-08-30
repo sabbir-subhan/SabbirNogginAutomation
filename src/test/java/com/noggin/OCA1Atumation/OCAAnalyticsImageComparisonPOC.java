@@ -45,6 +45,7 @@ import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategy;
+import com.noggin.OCA1AutomationSupport.HighlightElement;
 
 
 public class OCAAnalyticsImageComparisonPOC {
@@ -87,76 +88,7 @@ public class OCAAnalyticsImageComparisonPOC {
    * */
   //methods
     
-  //ImageMagick Compare Method
-    public void compareImagesWithImageMagick (String expected, String actual, String difference) throws Exception {
-        // This class implements the processing of os-commands using a ProcessBuilder.
-        // This is the core class of the im4java-library where all the magic takes place.
-        //ProcessStarter.setGlobalSearchPath("C:\\Program Files\\ImageMagick-7.0.6-Q16");
- 
-        // This instance wraps the compare command
-        CompareCmd compare = new CompareCmd();
- 
-        // Set the ErrorConsumer for the stderr of the ProcessStarter.
-        compare.setErrorConsumer(StandardStream.STDERR);
- 
-        // Create ImageMagick Operation Object
-        IMOperation cmpOp = new IMOperation();
- 
-        //Add option -fuzz to the ImageMagick commandline
-        //With Fuzz we can ignore small changes
-        cmpOp.fuzz(10.0);
- 
-        //The special "-metric" setting of 'AE' (short for "Absolute Error" count), will report (to standard error),
-        //a count of the actual number of pixels that were masked, at the current fuzz factor.
-        cmpOp.metric("AE");
- 
-        // Add the expected image
-        cmpOp.addImage(expected);
- 
-        // Add the actual image
-        cmpOp.addImage(actual);
- 
-        // This stores the difference
-        cmpOp.addImage(difference);
- 
-        try {
-            //Do the compare
-            System.out.println ("Comparison Started!");
-            compare.run(cmpOp);
-            System.out.println ("Comparison Finished!");
-        }
-        catch (Exception ex) {
-            System.out.print(ex);
-            System.out.println ("Comparison Failed!");
-            //Put the difference image to the global differences folder
-            //Files.copy(differenceImageFile,differenceFileForParent);
-            throw ex;
-        }
-    }
- 
-    //Compare Operation
-    public void doComparison () throws Exception {
-        //Did we capture baseline image before?
-        /*if (baselineImageFile.exists()){
-            //Compare screenshot with baseline
-            System.out.println("Comparison method will be called!\n");
- 
-            System.out.println("Baseline: " + baselineScreenShotPath + "\n" +
-                    "Actual: " + actualScreenShotPath + "\n" +
-                    "Diff: " + differenceScreenShotPath);
- 
-            //Try to use IM4Java for comparison
-            compareImagesWithImageMagick(baselineScreenShotPath, actualScreenShotPath, differenceScreenShotPath);
-        } else {
-        */
-    	   compareImagesWithImageMagick(baselineScreenShotPath, actualScreenShotPath, differenceScreenShotPath);
-            System.out.println("BaselineScreenshot is not exist! We put it into test screenshot folder.\n");
-            //Put the screenshot to the specified folder
-            //ImageIO.write(elementScreenShot.getImage(), "PNG", baselineImageFile);
-        //}
-    }
-    
-	 public void captureScreenFullPageShot(){
+  public void captureScreenFullPageShot(){
 		 
 		 //pause for 3 secs so page loads up
 		 try {
@@ -216,25 +148,25 @@ public class OCAAnalyticsImageComparisonPOC {
     	  //Used selenium getSize() method to get height and width of element.
     	  //Retrieve width of element.
     	  int ImageWidthEle = element.getSize().getWidth();
-    	  int ImageWidth = 700;
+    	  //int ImageWidth = 700;
     	  //Retrieve height of element.
     	  int ImageHeightEle = element.getSize().getHeight();  
-    	  int ImageHeight = 400;  
+    	  //int ImageHeight = 400;  
     	  
     	  //Used selenium Point class to get x y coordinates of Image element.
     	  //get location(x y coordinates) of the element.
     	  Point point = element.getLocation();
     	  int xcordEle = point.getX();
     	  int ycordEle = point.getY();
-    	  int xcord = 770;
-    	  int ycord = 170;
+    	  //int xcord = 770;
+    	  //int ycord = 170;
 
     	  //Reading full image screenshot.
     	  BufferedImage img = ImageIO.read(screen);
     	  
     	  //cut Image using height, width and x y coordinates parameters.
     	  System.out.println("Elemet ImageWidth:"+ImageWidthEle+",ImageHeight:"+ImageHeightEle+",xcord:"+xcordEle+",ycord:"+ycordEle);
-    	  System.out.println("ImageWidth:"+ImageWidth+",ImageHeight:"+ImageHeight+",xcord:"+xcord+",ycord:"+ycord);
+    	  //System.out.println("ImageWidth:"+ImageWidth+",ImageHeight:"+ImageHeight+",xcord:"+xcord+",ycord:"+ycord);
     	  BufferedImage dest = img.getSubimage(xcordEle, ycordEle, ImageWidthEle, ImageHeightEle);
     	  ImageIO.write(dest, "png", screen);
     	  
@@ -329,6 +261,9 @@ public class OCAAnalyticsImageComparisonPOC {
   public void CreateEventTest() throws Exception {
 
 	  //1. Login to OCA and land on OCA Home page
+	  		
+	  	//Creating a Highlight  object
+	  		HighlightElement highlight=new HighlightElement();
 	  
 			  WebElement DirectLoginButton = driver.findElement(By.id("wgt-8"));
 			  DirectLoginButton.click();
@@ -367,17 +302,28 @@ public class OCAAnalyticsImageComparisonPOC {
 			  //moveToElement will move the mouse to the middle of Settings Menu, however it does NOT click Settings Menu
 			  
 			  action.moveToElement(AnalyticsMenu).click().perform();
-			  Thread.sleep(5000);
+			  Thread.sleep(3000);
 			  //takke full page screenshot
 			  this.captureScreenFullPageShot();
 			  
 			  //take screen shot of div element which contains chart
 			  
-			  WebElement ChartDivContainerForNumberofMessages=driver.findElement(By.xpath("//*[@id='highcharts-2']//*[local-name() = 'svg']"));
-			
+			  //WebElement ChartDivContainerForNumberofMessages=driver.findElement(By.xpath("//*[@id='highcharts-2']//*[local-name() = 'svg']"));
+			  WebElement OCAChartIcons=driver.findElement(By.xpath("//*[@id='wgt-simplequery']/div"));
+			  highlight.highlightElement(driver, OCAChartIcons);
+			  //System.out.println("Rectangle:Height"+ChartDivContainerForNumberofMessages.getRect().getHeight());
+			 // System.out.println("Rectangle:Width"+ChartDivContainerForNumberofMessages.getRect().getWidth());
+			  //System.out.println("Rectangle:x coodridanate"+ChartDivContainerForNumberofMessages.getRect().getX());
+			 // System.out.println("Rectangle:y coodridanate"+ChartDivContainerForNumberofMessages.getRect().getY());
+			  System.out.println("Location:"+OCAChartIcons.getLocation());
+			  System.out.println("Size/Dimension:"+OCAChartIcons.getSize());
+			  System.out.println("Width:"+OCAChartIcons.getAttribute("width"));
+			  System.out.println("Height:"+OCAChartIcons.getAttribute("height"));
+			  Thread.sleep(3000);
+
 			//Call captureElementScreenshot function to capture screenshot of element.
-		        this.captureElementScreenshot(ChartDivContainerForNumberofMessages);
-		        this.doComparison();
+		        this.captureElementScreenshot(OCAChartIcons);
+		     
 		       
 			  			  		  
 				
